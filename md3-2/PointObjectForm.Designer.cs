@@ -34,7 +34,6 @@
             this.mapIdHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.xPosHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.yPosHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.pFlagHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // pointList
@@ -44,8 +43,7 @@
             this.typeHeader,
             this.mapIdHeader,
             this.xPosHeader,
-            this.yPosHeader,
-            this.pFlagHeader});
+            this.yPosHeader});
             this.pointList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pointList.Location = new System.Drawing.Point(0, 0);
             this.pointList.Name = "pointList";
@@ -79,10 +77,6 @@
             this.yPosHeader.Text = "Y";
             this.yPosHeader.Width = 100;
             // 
-            // pFlagHeader
-            // 
-            this.pFlagHeader.Text = "PFlag";
-            // 
             // PointObjectForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -101,7 +95,6 @@
         private System.Windows.Forms.ColumnHeader mapIdHeader;
         private System.Windows.Forms.ColumnHeader xPosHeader;
         private System.Windows.Forms.ColumnHeader yPosHeader;
-        private System.Windows.Forms.ColumnHeader pFlagHeader;
         public System.Windows.Forms.ListView pointList;
     }
 }
