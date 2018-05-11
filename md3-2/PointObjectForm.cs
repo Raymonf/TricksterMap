@@ -16,9 +16,6 @@ namespace TricksterMap
         {
             InitializeComponent();
 
-            // For MDI
-            this.TopLevel = false;
-
             // Initialize localization
             typeHeader.Text = Strings.Type;
             mapIdHeader.Text = Strings.MapID;

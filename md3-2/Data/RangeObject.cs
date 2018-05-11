@@ -45,20 +45,20 @@ namespace TricksterMap.Data
                 case 0x00:
                     return "Setting Debris (Unknown/0)";
                 case 0x01:
-                    return "Portal Entrance";
+                    return "Portal Entrance Range";
                 case 0x02:
                     return "Monster Movement Range";
                 case 0x05:
                     return "Monster Gather Range";
                 case 0x06:
-                    return "NPC Movement Scope";
+                    return "NPC Movement Range";
                 case 0x09:
                     return "Monster Spawn Range";
                 case 0x0A:
                     return "GvG Respawn Range";
             }
 
-            return "Unknown (" + Type + ")";
+            return String.Format(Strings.UnknownType, Type);
         }
     }
 }

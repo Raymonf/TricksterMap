@@ -14,12 +14,29 @@ namespace TricksterMap
         {
             var mapData = new MapDataInfo();
 
-            var signature = reader.ReadBytes(4);
+            var signature = Encoding.ASCII.GetString(reader.ReadBytes(4));
+            if (signature != "MDN_")
+            {
+                throw new InvalidDataException(Strings.InvalidMapFileError);
+            }
+
             mapData.Version = reader.ReadInt32();
-
-            // TODO
-            var header1 = reader.ReadBytes(0x3C);
-
+            mapData.TileBpp = reader.ReadInt32();
+            mapData.Param3 = reader.ReadInt32();
+            mapData.Param4 = reader.ReadInt32();
+            mapData.MapSizeSum = reader.ReadInt32();
+            mapData.Param6 = reader.ReadInt32();
+            mapData.Param7 = reader.ReadInt32();
+            mapData.MapSizeX = reader.ReadInt32();
+            mapData.MapSizeY = reader.ReadInt32();
+            mapData.TileSizeX = reader.ReadInt32();
+            mapData.TileSizeY = reader.ReadInt32();
+            mapData.TileCountX = reader.ReadInt32();
+            mapData.TileCountY = reader.ReadInt32();
+            mapData.Param14 = reader.ReadInt32();
+            mapData.LyrDataCount = reader.ReadInt32();
+            mapData.TileGroupCount = reader.ReadInt32();
+            
             var layerCount = reader.ReadInt32();
             Console.WriteLine("layerCount = {0}", layerCount);
 
@@ -32,7 +49,9 @@ namespace TricksterMap
             var effectCount = reader.ReadInt32();
             Console.WriteLine("effectCount = {0}", effectCount);
 
-            var header2 = reader.ReadBytes(0xC);
+            mapData.Param21 = reader.ReadInt32();
+            mapData.Param22 = reader.ReadInt32();
+            mapData.Param23 = reader.ReadInt32();
 
             for (var i = 0; i < layerCount; i++)
             {

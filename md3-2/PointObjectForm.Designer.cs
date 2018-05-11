@@ -28,29 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pointList = new System.Windows.Forms.ListView();
             this.idHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.typeHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.mapIdHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.xPosHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.yPosHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.pointList = new System.Windows.Forms.ListView();
             this.SuspendLayout();
-            // 
-            // pointList
-            // 
-            this.pointList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.idHeader,
-            this.typeHeader,
-            this.mapIdHeader,
-            this.xPosHeader,
-            this.yPosHeader});
-            this.pointList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pointList.Location = new System.Drawing.Point(0, 0);
-            this.pointList.Name = "pointList";
-            this.pointList.Size = new System.Drawing.Size(800, 450);
-            this.pointList.TabIndex = 1;
-            this.pointList.UseCompatibleStateImageBehavior = false;
-            this.pointList.View = System.Windows.Forms.View.Details;
             // 
             // idHeader
             // 
@@ -77,6 +61,23 @@
             this.yPosHeader.Text = "Y";
             this.yPosHeader.Width = 100;
             // 
+            // pointList
+            // 
+            this.pointList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.idHeader,
+            this.typeHeader,
+            this.mapIdHeader,
+            this.xPosHeader,
+            this.yPosHeader});
+            this.pointList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pointList.FullRowSelect = true;
+            this.pointList.Location = new System.Drawing.Point(0, 0);
+            this.pointList.Name = "pointList";
+            this.pointList.Size = new System.Drawing.Size(800, 450);
+            this.pointList.TabIndex = 2;
+            this.pointList.UseCompatibleStateImageBehavior = false;
+            this.pointList.View = System.Windows.Forms.View.Details;
+            // 
             // PointObjectForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -90,6 +91,7 @@
         }
 
         #endregion
+
         private System.Windows.Forms.ColumnHeader idHeader;
         private System.Windows.Forms.ColumnHeader typeHeader;
         private System.Windows.Forms.ColumnHeader mapIdHeader;

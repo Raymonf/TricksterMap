@@ -106,6 +106,15 @@ namespace TricksterMap {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid Trickster map file..
+        /// </summary>
+        internal static string InvalidMapFileError {
+            get {
+                return ResourceManager.GetString("InvalidMapFileError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Map ID.
         /// </summary>
         internal static string MapID {
@@ -129,6 +138,15 @@ namespace TricksterMap {
         internal static string None {
             get {
                 return ResourceManager.GetString("None", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NORI Entity (?).
+        /// </summary>
+        internal static string NORIEntity {
+            get {
+                return ResourceManager.GetString("NORIEntity", resourceCulture);
             }
         }
         
@@ -192,6 +210,15 @@ namespace TricksterMap {
         internal static string Type {
             get {
                 return ResourceManager.GetString("Type", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unknown ({0}).
+        /// </summary>
+        internal static string UnknownType {
+            get {
+                return ResourceManager.GetString("UnknownType", resourceCulture);
             }
         }
         

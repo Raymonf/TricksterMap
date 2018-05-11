@@ -47,7 +47,7 @@ namespace TricksterMap.Data
             switch (Type)
             {
                 case 0x00:
-                    return "None";
+                    return Strings.None;
                 case 0x01:
                     return "Portal";
                 case 0x02:
@@ -65,10 +65,10 @@ namespace TricksterMap.Data
                 case 0x0A:
                     return "Skill NPC";
                 case 0x0D:
-                    return "NORI Entity (?)";
+                    return Strings.NORIEntity;
             }
 
-            return "Unknown (" + Type + ")";
+            return String.Format(Strings.UnknownType, Type);
         }
     }
 }

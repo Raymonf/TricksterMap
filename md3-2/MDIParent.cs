@@ -51,7 +51,7 @@ namespace TricksterMap
                     var pointForm = new PointObjectForm
                     {
                         Text = "Point Object Data (" + fileName + ")",
-                        Parent = this
+                        MdiParent = this
                     };
 
                     foreach (var point in mapInfo.PointObjects)

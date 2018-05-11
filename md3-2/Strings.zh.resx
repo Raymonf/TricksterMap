@@ -136,6 +136,10 @@
   <data name="GeneralNPC" xml:space="preserve">
     <value>NPC（一般）</value>
   </data>
+  <data name="InvalidMapFileError" xml:space="preserve">
+    <value>無效的Trickster地圖資源文件。</value>
+    <comment>Used when the user specifies an invalid file.</comment>
+  </data>
   <data name="MapID" xml:space="preserve">
     <value>地圖ID</value>
   </data>
@@ -146,11 +150,15 @@
   <data name="None" xml:space="preserve">
     <value>無用</value>
   </data>
+  <data name="NORIEntity" xml:space="preserve">
+    <value>NORI 實體 (?)</value>
+    <comment>Unconfirmed</comment>
+  </data>
   <data name="NotWalkable" xml:space="preserve">
     <value>不能通過的部分</value>
   </data>
   <data name="OpenType" xml:space="preserve">
-    <value>Trickster 地圖資源文件 (*.md3)</value>
+    <value>Trickster地圖資源文件 (*.md3)</value>
     <comment>Open file type</comment>
   </data>
   <data name="RespawnLocation" xml:space="preserve">
@@ -176,5 +184,8 @@
   </data>
   <data name="YPos" xml:space="preserve">
     <value>Y坐標</value>
+  </data>
+  <data name="UnknownType" xml:space="preserve">
+    <value>未知類型（{0}）</value>
   </data>
 </root>
