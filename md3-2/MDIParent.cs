@@ -64,6 +64,28 @@ namespace md3_2
 
                         Console.WriteLine("Bytes read: {0:X}", 0x64 + 4 + 4 + 8 + (x * y));
                         Console.WriteLine("Config layer {0} length: {1:X}", i + 1, config_layer_data.Length);
+
+                        if (configType == 1)
+                        {
+                            var iTotal = 0;
+                            Bitmap collision = new Bitmap(x, y);
+
+                            for (int iY = 0; iY < y; iY++)
+                            {
+                                for (int iX = 0; iX < x; iX++)
+                                {   
+                                    var walkable = config_layer_data[iTotal] == 0x0;
+                                    collision.SetPixel(iX, iY, walkable ? Color.Green : Color.Black);
+                                    iTotal++;
+                                }
+                            }
+
+                            var collisionForm = new ConfigLayerCollisionForm();
+                            collisionForm.MdiParent = this;
+                            collisionForm.Text = String.Format(Strings.CollisionFormTitle, FileName);
+                            collisionForm.collisionPicture.BackgroundImage = collision;
+                            collisionForm.Show();
+                        }
                     }
 
                     Console.WriteLine("range_object_data");
@@ -81,9 +103,7 @@ namespace md3_2
 
                     var pointForm = new PointObjectForm();
                     pointForm.Text = "Point Object Data (" + FileName + ")";
-                    pointForm.TopLevel = false;
                     pointForm.Parent = this;
-                    pointForm.Show();
 
                     for (int i = 0; i < point_object_size; i++)
                     {
@@ -103,6 +123,8 @@ namespace md3_2
                             pointForm.pointList.Items.Add(new ListViewItem(new string[] { pointObject.Id.ToString(), pointObject.GetTypeName(), pointObject.MapId.ToString(), pointObject.X.ToString(), pointObject.Y.ToString() }));
                         }
                     }
+
+                    pointForm.Show();
 
                     Console.WriteLine("effect_object_data");
 

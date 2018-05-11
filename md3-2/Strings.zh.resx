@@ -117,6 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CollisionFormTitle" xml:space="preserve">
+    <value>Config Layer - 碰撞資料 （{0}）</value>
+    <comment>{0} is the map filename</comment>
+  </data>
   <data name="File" xml:space="preserve">
     <value>文件</value>
     <comment>Menu name</comment>
@@ -139,6 +143,12 @@
     <value>怪物孵化點
 </value>
   </data>
+  <data name="None" xml:space="preserve">
+    <value>無用</value>
+  </data>
+  <data name="NotWalkable" xml:space="preserve">
+    <value>不能通過的部分</value>
+  </data>
   <data name="RespawnLocation" xml:space="preserve">
     <value>重生點</value>
   </data>
@@ -153,6 +163,9 @@
   </data>
   <data name="Type" xml:space="preserve">
     <value>類型</value>
+  </data>
+  <data name="Walkable" xml:space="preserve">
+    <value>能通過的部分</value>
   </data>
   <data name="XPos" xml:space="preserve">
     <value>X坐標</value>

@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigLayerCollisionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfigLayerCollisionForm.Designer.cs">
+      <DependentUpon>ConfigLayerCollisionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data\ConfigLayer.cs" />
     <Compile Include="Data\MapDataInfo.cs" />
     <Compile Include="Data\PointObject.cs" />
@@ -73,6 +79,9 @@
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
     <Compile Include="TileReader.cs" />
+    <EmbeddedResource Include="ConfigLayerCollisionForm.resx">
+      <DependentUpon>ConfigLayerCollisionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MDIParent.resx">
       <DependentUpon>MDIParent.cs</DependentUpon>
     </EmbeddedResource>

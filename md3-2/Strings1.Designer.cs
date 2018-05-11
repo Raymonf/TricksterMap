@@ -61,6 +61,15 @@ namespace md3_2 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Config Layer - Collision Data ({0}).
+        /// </summary>
+        internal static string CollisionFormTitle {
+            get {
+                return ResourceManager.GetString("CollisionFormTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to File.
         /// </summary>
         internal static string File {
@@ -115,6 +124,24 @@ namespace md3_2 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to None.
+        /// </summary>
+        internal static string None {
+            get {
+                return ResourceManager.GetString("None", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not Walkable.
+        /// </summary>
+        internal static string NotWalkable {
+            get {
+                return ResourceManager.GetString("NotWalkable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Respawn Location.
         /// </summary>
         internal static string RespawnLocation {
@@ -156,6 +183,15 @@ namespace md3_2 {
         internal static string Type {
             get {
                 return ResourceManager.GetString("Type", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Walkable.
+        /// </summary>
+        internal static string Walkable {
+            get {
+                return ResourceManager.GetString("Walkable", resourceCulture);
             }
         }
         

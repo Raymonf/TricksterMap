@@ -61,9 +61,9 @@ namespace md3_2.Data
             switch(b)
             {
                 case 0:
-                    return "Walkable";
+                    return Strings.Walkable;
                 case 1:
-                    return "Not Walkable";
+                    return Strings.NotWalkable;
             }
 
             return "Unknown (" + (int)b + ")";
