@@ -1,4 +1,4 @@
-﻿namespace md3_2
+﻿namespace TricksterMap
 {
     partial class PointObjectForm
     {

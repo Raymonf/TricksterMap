@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace md3_2 {
+namespace TricksterMap {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace md3_2 {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("md3_2.Strings", typeof(Strings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TricksterMap.Strings", typeof(Strings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -138,6 +138,15 @@ namespace md3_2 {
         internal static string NotWalkable {
             get {
                 return ResourceManager.GetString("NotWalkable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trickster Map Data Files (*.md3).
+        /// </summary>
+        internal static string OpenType {
+            get {
+                return ResourceManager.GetString("OpenType", resourceCulture);
             }
         }
         

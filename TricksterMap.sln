@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "md3-2", "md3-2\md3-2.csproj", "{71A3C82F-0E6F-415C-BD25-7A2B25A86B84}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TricksterMap", "md3-2\TricksterMap.csproj", "{71A3C82F-0E6F-415C-BD25-7A2B25A86B84}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

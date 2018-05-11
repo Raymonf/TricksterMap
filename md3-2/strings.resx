@@ -148,6 +148,10 @@
   <data name="NotWalkable" xml:space="preserve">
     <value>Not Walkable</value>
   </data>
+  <data name="OpenType" xml:space="preserve">
+    <value>Trickster Map Data Files (*.md3)</value>
+    <comment>Open file type</comment>
+  </data>
   <data name="RespawnLocation" xml:space="preserve">
     <value>Respawn Location</value>
   </data>

@@ -149,6 +149,10 @@
   <data name="NotWalkable" xml:space="preserve">
     <value>不能通過的部分</value>
   </data>
+  <data name="OpenType" xml:space="preserve">
+    <value>Trickster 地圖資源文件 (*.md3)</value>
+    <comment>Open file type</comment>
+  </data>
   <data name="RespawnLocation" xml:space="preserve">
     <value>重生點</value>
   </data>

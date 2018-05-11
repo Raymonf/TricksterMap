@@ -9,12 +9,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TricksterMap.Data;
 
-namespace md3_2
+namespace TricksterMap
 {
     public partial class ConfigLayerCollisionForm : Form
     {
+        public Color WalkableColor = Color.Green;
+        public Color NotWalkableColor = Color.Black;
+
         string font = "Microsoft JhengHei UI";
+        Color textColor = Color.Black;
+        Color backgroundColor = Color.FromArgb(160, 255, 255, 255);
 
         public ConfigLayerCollisionForm()
         {
@@ -31,9 +37,9 @@ namespace md3_2
             g.PixelOffsetMode = PixelOffsetMode.HighQuality;
             g.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
 
-            var fontObject = new Font("Microsoft JhengHei UI", 12);
+            var fontObject = new Font(font, 12);
 
-            using (var brush = new SolidBrush(Color.FromArgb(160, 255, 255, 255)))
+            using (var brush = new SolidBrush(backgroundColor))
             {
                 var walkSize = g.MeasureString(Strings.Walkable, fontObject);
                 var notWalkSize = g.MeasureString(Strings.NotWalkable, fontObject);
@@ -42,15 +48,32 @@ namespace md3_2
                 g.FillRectangle(brush, 0, 0, boxWidth + 32, 64);
             }
 
-            g.DrawRectangle(new Pen(Color.Green, 10), 10, 10, 10, 10);
-            g.DrawString(Strings.Walkable, fontObject, new SolidBrush(Color.Black), 30, 6);
+            g.DrawRectangle(new Pen(WalkableColor, 10), 10, 10, 10, 10);
+            g.DrawString(Strings.Walkable, fontObject, new SolidBrush(textColor), 30, 6);
             
-            g.DrawRectangle(new Pen(Color.Black, 10), 10, 34, 10, 10);
-            g.DrawString(Strings.NotWalkable, fontObject, new SolidBrush(Color.Black), 30, 30);
+            g.DrawRectangle(new Pen(NotWalkableColor, 10), 10, 34, 10, 10);
+            g.DrawString(Strings.NotWalkable, fontObject, new SolidBrush(textColor), 30, 30);
 
             g.Flush();
 
             collisionPicture.Image = bmp;
+        }
+
+        public void LoadData(ConfigLayer layer)
+        {
+            var iTotal = 0;
+            Bitmap collision = new Bitmap(layer.X, layer.Y);
+
+            for (int iY = 0; iY < layer.Y; iY++)
+            {
+                for (int iX = 0; iX < layer.X; iX++)
+                {
+                    collision.SetPixel(iX, iY, layer.Data[iTotal] == 0x0 ? WalkableColor : NotWalkableColor);
+                    iTotal++;
+                }
+            }
+
+            collisionPicture.BackgroundImage = collision;
         }
     }
 }

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace md3_2
+namespace TricksterMap
 {
     public class TileReader
     {

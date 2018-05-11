@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace md3_2
+namespace TricksterMap
 {
     public partial class PointObjectForm : Form
     {

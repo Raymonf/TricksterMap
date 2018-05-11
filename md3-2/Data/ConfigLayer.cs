@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace md3_2.Data
+namespace TricksterMap.Data
 {
     public class ConfigLayer
     {
@@ -34,6 +34,11 @@ namespace md3_2.Data
         /// Probably 0x10/16bpp
         /// </summary>
         public int BppY { get; set; }
+
+        /// <summary>
+        /// Actual layer data
+        /// </summary>
+        public byte[] Data { get; set; }
 
         public string GetTypeName()
         {

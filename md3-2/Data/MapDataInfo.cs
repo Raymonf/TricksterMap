@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace md3_2.Data
+namespace TricksterMap.Data
 {
-    class MapDataInfo
+    public class MapDataInfo
     {
         #region Header
 
@@ -90,24 +90,7 @@ namespace md3_2.Data
         /// Number of image groups in the til file
         /// </summary>
         public int TileGroupCount { get; set; }
-
-        /// <summary>
-        /// Number of config layers present
-        /// </summary>
-        public int ConfigLayerCount { get; set; }
         
-        public int RangeObjectCount { get; set; }
-
-        /// <summary>
-        /// Number of point objects present
-        /// </summary>
-        public int PointObjectCount { get; set; }
-
-        /// <summary>
-        /// Number of effect objects present
-        /// </summary>
-        public int EffectObjectCount { get; set; }
-
         /// <summary>
         /// Unknown
         /// </summary>
@@ -131,7 +114,7 @@ namespace md3_2.Data
         /// List of config layers
         /// We probably won't touch this but we'll need it when we're rebuilding the MD3 file
         /// </summary>  
-        public List<byte[]> ConfigLayers { get; set; } = new List<byte[]>();
+        public List<ConfigLayer> ConfigLayers { get; set; } = new List<ConfigLayer>();
 
         /// <summary>
         /// Range object list (TODO)

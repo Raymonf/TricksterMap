@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace md3_2.Data
+namespace TricksterMap.Data
 {
     public class RangeObject
     {
@@ -13,7 +13,15 @@ namespace md3_2.Data
         /// </summary>
         public int Type { get; set; }
 
+        /// <summary>
+        /// Range object ID
+        /// </summary>
         public int Id { get; set; }
+
+        /// <summary>
+        /// Warp portal destination ZoneID
+        /// </summary>
+        public int Destination { get; set; }
 
         public int X1 { get; set; }
         public int Y1 { get; set; }

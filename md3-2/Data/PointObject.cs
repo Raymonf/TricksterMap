@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace md3_2.Data
+namespace TricksterMap.Data
 {
     public class PointObject
     {
