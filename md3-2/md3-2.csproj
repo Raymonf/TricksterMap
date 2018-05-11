@@ -48,7 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\MapDataInfo.cs" />
     <Compile Include="Data\PointObject.cs" />
+    <Compile Include="Data\RangeObject.cs" />
     <Compile Include="LvCtl.cs" />
     <Compile Include="MDIParent.cs">
       <SubType>Form</SubType>
@@ -64,6 +66,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TileReader.cs" />
     <EmbeddedResource Include="MDIParent.resx">
       <DependentUpon>MDIParent.cs</DependentUpon>
     </EmbeddedResource>

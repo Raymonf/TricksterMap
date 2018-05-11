@@ -8,24 +8,40 @@ namespace md3_2.Data
 {
     public class PointObject
     {
-        // Position Id / PosId
+        /// <summary>
+        /// Position Id / PosId
+        /// </summary>
         public int Id { get; set; }
 
-        // Type of point object
+        /// <summary>
+        /// Type of point object
+        /// </summary>
         public int Type { get; set; }
 
-        // Map ID (for portals only)
+        /// <summary>
+        /// Map ID (for portals only)
+        /// </summary>
         public int MapId { get; set; }
 
-        // X position
+        /// <summary>
+        /// X position
+        /// </summary>
         public int X { get; set; }
 
-        // Y position
+        /// <summary>
+        /// Y position
+        /// </summary>
         public int Y { get; set; }
-
-        // 這個應該不用理
-        public int Padding { get; set; } = 0;
-
+        
+        /// <summary>
+        /// Options (unconfirmed, is this always 0?)
+        /// </summary>
+        public int Options { get; set; } = 0;
+        
+        /// <summary>
+        /// Gets the name of the point object's type
+        /// </summary>
+        /// <returns>Name of the object's type</returns>
         public string GetTypeName()
         {
             switch (Type)

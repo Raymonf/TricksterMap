@@ -85,7 +85,7 @@ namespace md3_2
                                 MapId = pointReader.ReadInt32(),
                                 X = pointReader.ReadInt32(),
                                 Y = pointReader.ReadInt32(),
-                                Padding = pointReader.ReadInt32()
+                                Options = pointReader.ReadInt32()
                             };
 
                             pointForm.pointList.Items.Add(new ListViewItem(new string[] { pointObject.Id.ToString(), pointObject.GetTypeName(), pointObject.MapId.ToString(), pointObject.X.ToString(), pointObject.Y.ToString() }));
