@@ -17,6 +17,10 @@ namespace md3_2
         public MDIParent()
         {
             InitializeComponent();
+
+            fileMenu.Text = Strings.File;
+            openToolStripMenuItem.Text = Strings.FileOpen;
+            exitToolStripMenuItem.Text = Strings.FileExit;
         }
 
         private void OpenFile(object sender, EventArgs e)
@@ -29,30 +33,38 @@ namespace md3_2
 
                 using (var reader = new BinaryReader(File.Open(FileName, FileMode.Open)))
                 {
-                    var header1 = reader.ReadBytes(0x48);
-                    var range_object_size = reader.ReadInt32();
+                    var signature = reader.ReadBytes(4);
+                    var version = reader.ReadBytes(4);
+                    var header1 = reader.ReadBytes(0x3C);
+                    var config_layer_count = reader.ReadInt32();
+                    Console.WriteLine("config_layer_count = {0}", config_layer_count);
 
+                    var range_object_size = reader.ReadInt32();
                     Console.WriteLine("range_object_size = {0}", range_object_size);
 
                     var point_object_size = reader.ReadInt32();
-
                     Console.WriteLine("point_object_size = {0}", point_object_size);
 
                     var effect_object_size = reader.ReadInt32();
-
                     Console.WriteLine("effect_object_size = {0}", effect_object_size);
 
-                    var header2 = reader.ReadBytes(16);
-                    var x = reader.ReadInt32();
-                    var y = reader.ReadInt32();
-                    var header3 = reader.ReadBytes(8);
+                    var header2 = reader.ReadBytes(0xC);
 
-                    Console.WriteLine("X: {0} / Y: {1} / Total length: {2} ( {2:X} )", x, y, x * y);
+                    for (var i = 0; i < config_layer_count; i++)
+                    {
+                        var configType = reader.ReadInt32();
+                        var x = reader.ReadInt32();
+                        var y = reader.ReadInt32();
+                        var bppX = reader.ReadInt32();
+                        var bppY = reader.ReadInt32();
 
-                    var config_layer_1_data = reader.ReadBytes(x * y);
+                        Console.WriteLine("X: {0} / Y: {1} / Total length: {2} ( {2:X} )", x, y, x * y);
 
-                    Console.WriteLine("Bytes read: {0:X}", 0x64 + 4 + 4 + 8 + (x * y));
-                    Console.WriteLine("Config layer length: {0:X}", config_layer_1_data.Length);
+                        var config_layer_data = reader.ReadBytes(x * y);
+
+                        Console.WriteLine("Bytes read: {0:X}", 0x64 + 4 + 4 + 8 + (x * y));
+                        Console.WriteLine("Config layer {0} length: {1:X}", i + 1, config_layer_data.Length);
+                    }
 
                     Console.WriteLine("range_object_data");
 

@@ -136,7 +136,7 @@ namespace md3_2.Data
         /// <summary>
         /// Range object list (TODO)
         /// </summary>
-        public List<object> RangeObjects { get; set; } = new List<object>();
+        public List<RangeObject> RangeObjects { get; set; } = new List<RangeObject>();
 
         /// <summary>
         /// Point object list (TODO)

@@ -15,6 +15,12 @@ namespace md3_2
         public PointObjectForm()
         {
             InitializeComponent();
+
+            // Initialize localization
+            typeHeader.Text = Strings.Type;
+            mapIdHeader.Text = Strings.MapID;
+            xPosHeader.Text = Strings.XPos;
+            yPosHeader.Text = Strings.YPos;
         }
     }
 }

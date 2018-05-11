@@ -51,17 +51,17 @@ namespace md3_2.Data
                 case 0x01:
                     return "Portal";
                 case 0x02:
-                    return "Respawn Location";
+                    return Strings.RespawnLocation;
                 case 0x03:
-                    return "Monster Spawn";
+                    return Strings.MonsterSpawnPoint;
                 case 0x04:
-                    return "General NPC";
+                    return Strings.GeneralNPC;
                 case 0x05:
-                    return "Shop NPC";
+                    return Strings.ShopNPC;
                 case 0x07:
-                    return "Teleport Item Spawn";
+                    return Strings.TeleportItemSpawn;
                 case 0x09:
-                    return "Teleport NPC Spawn";
+                    return Strings.TeleportNPCSpawn;
                 case 0x0A:
                     return "Skill NPC";
                 case 0x0D:
