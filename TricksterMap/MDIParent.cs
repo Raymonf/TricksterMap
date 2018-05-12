@@ -65,37 +65,38 @@ namespace TricksterMap
                     pointForm.Show();
 
                     // At this point, we need to grab the tile data
-                    var tiles = TileReader.Read(mapInfo, File.Open(fileName.Replace(".md3", ".til"), FileMode.Open));
+                    var tileData = TileReader.Read(mapInfo, File.Open(fileName.Replace(".md3", ".til"), FileMode.Open));
+                    var tiles = new List<Bitmap>();
 
-                    var bmp = new Bitmap(mapInfo.MapSizeX, mapInfo.MapSizeY);
-
-                    using (var g = Graphics.FromImage(bmp))
+                    foreach (var tile in tileData)
                     {
-                        var addressIndex = 0;
-                        foreach (var tile in tiles)
-                        {
-                            var tileIndex = 0;
+                        var bmp = new Bitmap(tile.TilesX * mapInfo.TileSizeX, tile.TilesY * mapInfo.TileSizeY);
 
+                        var tileIndex = 0;
+                        using (var g = Graphics.FromImage(bmp))
+                        {
                             for (int i = 0; i < tile.TilesY; i++)
                             {
                                 for (int j = 0; j < tile.TilesX; j++)
                                 {
-                                    g.DrawImage(tile.Bitmaps[tileIndex], tileIndex * mapInfo.TileSizeX, addressIndex * mapInfo.TileSizeY, mapInfo.TileSizeX, mapInfo.TileSizeY);
+                                    g.DrawImage(tile.Bitmaps[tileIndex], j * mapInfo.TileSizeX, i * mapInfo.TileSizeY, mapInfo.TileSizeX, mapInfo.TileSizeY);
+                                    g.DrawString((tileIndex + 1).ToString(), new Font("Arial", 10), Brushes.Black, j * mapInfo.TileSizeX, i * mapInfo.TileSizeY);
+                                    Console.WriteLine("{0}: ({1}, {2})", tileIndex + 1, j, i);
                                     tileIndex++;
                                 }
                             }
-
-                            addressIndex++;
                         }
+
+                        tiles.Add(bmp);
                     }
 
                     var mapViewForm = new MapViewForm
                     {
-                        Text = "Map View (" + fileName + ")",
+                        Text = "Tile View (" + fileName.Replace(".md3", ".til") + ")",
                         MdiParent = this
                     };
 
-                    mapViewForm.mapPicture.BackgroundImage = bmp;
+                    mapViewForm.tiles = tiles;
 
                     mapViewForm.Show();
                 }
