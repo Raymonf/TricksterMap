@@ -187,4 +187,57 @@
   <data name="UnknownType" xml:space="preserve">
     <value>Unknown ({0})</value>
   </data>
+  <data name="CollisionData" xml:space="preserve">
+    <value>Collision Data</value>
+  </data>
+  <data name="GroundType" xml:space="preserve">
+    <value>Ground Type</value>
+  </data>
+  <data name="GvGSpawnRange" xml:space="preserve">
+    <value>GvG Spawn Range</value>
+  </data>
+  <data name="HeightData" xml:space="preserve">
+    <value>Height Data</value>
+  </data>
+  <data name="MonsterGatherRange" xml:space="preserve">
+    <value>Monster Gather Range</value>
+  </data>
+  <data name="MonsterMovementRange" xml:space="preserve">
+    <value>Monster Movement Range</value>
+  </data>
+  <data name="MonsterSpawnRange" xml:space="preserve">
+    <value>Monster Spawn Range</value>
+  </data>
+  <data name="NPCMovementRange" xml:space="preserve">
+    <value>NPC Movement Range</value>
+  </data>
+  <data name="Portal" xml:space="preserve">
+    <value>Portal</value>
+  </data>
+  <data name="PortalEntranceRange" xml:space="preserve">
+    <value>Portal Entrance Range</value>
+    <comment>The range in which a user can enter a portal from</comment>
+  </data>
+  <data name="PreferredFont" xml:space="preserve">
+    <value>MS Sans Serif</value>
+    <comment>Used for rendering text</comment>
+  </data>
+  <data name="SetDebris" xml:space="preserve">
+    <value>Set Debris (?)</value>
+    <comment>No idea what this is tbh</comment>
+  </data>
+  <data name="SkillNPC" xml:space="preserve">
+    <value>Skill Shop NPC</value>
+  </data>
+  <data name="SpecialEffects" xml:space="preserve">
+    <value>Special Effects</value>
+  </data>
+  <data name="XSize" xml:space="preserve">
+    <value>X: {0}</value>
+    <comment>X size, for the colliison data legend</comment>
+  </data>
+  <data name="YSize" xml:space="preserve">
+    <value>Y: {0}</value>
+    <comment>Y size, for the collision data legend</comment>
+  </data>
 </root>

@@ -18,7 +18,7 @@ namespace TricksterMap
         public Color WalkableColor = Color.Green;
         public Color NotWalkableColor = Color.Black;
 
-        string font = "Microsoft JhengHei UI";
+        string font = Strings.PreferredFont;
         Color textColor = Color.Black;
         Color backgroundColor = Color.FromArgb(160, 255, 255, 255);
 
@@ -27,40 +27,10 @@ namespace TricksterMap
             InitializeComponent();
         }
 
-        private void ConfigLayerCollisionForm_Load(object sender, EventArgs e)
-        {
-            Bitmap bmp = new Bitmap(512, 64);
-            Graphics g = Graphics.FromImage(bmp);
-            
-            g.SmoothingMode = SmoothingMode.AntiAlias;
-            g.InterpolationMode = InterpolationMode.HighQualityBicubic;
-            g.PixelOffsetMode = PixelOffsetMode.HighQuality;
-            g.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
-
-            var fontObject = new Font(font, 12);
-
-            using (var brush = new SolidBrush(backgroundColor))
-            {
-                var walkSize = g.MeasureString(Strings.Walkable, fontObject);
-                var notWalkSize = g.MeasureString(Strings.NotWalkable, fontObject);
-                var boxWidth = Math.Max(walkSize.Width, notWalkSize.Width); // get larger
-
-                g.FillRectangle(brush, 0, 0, boxWidth + 32, 64);
-            }
-
-            g.DrawRectangle(new Pen(WalkableColor, 10), 10, 10, 10, 10);
-            g.DrawString(Strings.Walkable, fontObject, new SolidBrush(textColor), 30, 6);
-            
-            g.DrawRectangle(new Pen(NotWalkableColor, 10), 10, 34, 10, 10);
-            g.DrawString(Strings.NotWalkable, fontObject, new SolidBrush(textColor), 30, 30);
-
-            g.Flush();
-
-            collisionPicture.Image = bmp;
-        }
-
         public void LoadData(ConfigLayer layer)
         {
+            WriteLegend(layer);
+
             var iTotal = 0;
             Bitmap collision = new Bitmap(layer.X, layer.Y);
 
@@ -74,6 +44,41 @@ namespace TricksterMap
             }
 
             collisionPicture.BackgroundImage = collision;
+        }
+
+        public void WriteLegend(ConfigLayer layer)
+        {
+            Bitmap bmp = new Bitmap(512, 90);
+            Graphics g = Graphics.FromImage(bmp);
+
+            g.SmoothingMode = SmoothingMode.AntiAlias;
+            g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+            g.PixelOffsetMode = PixelOffsetMode.HighQuality;
+            g.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
+
+            var fontObject = new Font(font, 12);
+
+            using (var brush = new SolidBrush(backgroundColor))
+            {
+                var walkSize = g.MeasureString(Strings.Walkable, fontObject);
+                var notWalkSize = g.MeasureString(Strings.NotWalkable, fontObject);
+                var boxWidth = Math.Max(walkSize.Width, notWalkSize.Width); // get larger
+
+                g.FillRectangle(brush, 0, 0, boxWidth + 32, 90);
+            }
+
+            g.DrawRectangle(new Pen(WalkableColor, 10), 10, 10, 10, 10);
+            g.DrawString(Strings.Walkable, fontObject, new SolidBrush(textColor), 30, 6);
+
+            g.DrawRectangle(new Pen(NotWalkableColor, 10), 10, 34, 10, 10);
+            g.DrawString(Strings.NotWalkable, fontObject, new SolidBrush(textColor), 30, 30);
+
+            g.DrawString(String.Format(Strings.XSize, layer.X), fontObject, new SolidBrush(textColor), 2, 52);
+            g.DrawString(String.Format(Strings.YSize, layer.Y), fontObject, new SolidBrush(textColor), 2, 70);
+
+            g.Flush();
+
+            collisionPicture.Image = bmp;
         }
     }
 }

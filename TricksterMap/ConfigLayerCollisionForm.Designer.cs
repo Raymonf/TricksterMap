@@ -50,7 +50,6 @@
             this.Controls.Add(this.collisionPicture);
             this.Name = "ConfigLayerCollisionForm";
             this.Text = "Config Layer - Collision Data";
-            this.Load += new System.EventHandler(this.ConfigLayerCollisionForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.collisionPicture)).EndInit();
             this.ResumeLayout(false);
 

@@ -49,7 +49,7 @@ namespace TricksterMap.Data
                 case 0x00:
                     return Strings.None;
                 case 0x01:
-                    return "Portal";
+                    return Strings.Portal;
                 case 0x02:
                     return Strings.RespawnLocation;
                 case 0x03:
@@ -63,7 +63,7 @@ namespace TricksterMap.Data
                 case 0x09:
                     return Strings.TeleportNPCSpawn;
                 case 0x0A:
-                    return "Skill NPC";
+                    return Strings.SkillNPC;
                 case 0x0D:
                     return Strings.NORIEntity;
             }

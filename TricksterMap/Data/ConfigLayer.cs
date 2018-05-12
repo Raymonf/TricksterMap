@@ -46,19 +46,19 @@ namespace TricksterMap.Data
             {
                 case 0x1:
                     // Setting where players can walk and where they can't
-                    return "Collision Data";
+                    return Strings.CollisionData;
                 case 0x2:
                     // Example: O/X points at Paradise
-                    return "Special Effects";
+                    return Strings.SpecialEffects;
                 case 0x3:
                     // Soil value?
-                    return "Ground Type";
+                    return Strings.GroundType;
                 case 0x4:
                     // Setting height differences?
-                    return "Height Data";
+                    return Strings.HeightData;
             }
 
-            return "Unknown (" + Type + ")";
+            return String.Format(Strings.UnknownType, Type);
         }
 
         public string GetValueName(byte b)
@@ -71,7 +71,7 @@ namespace TricksterMap.Data
                     return Strings.NotWalkable;
             }
 
-            return "Unknown (" + (int)b + ")";
+            return String.Format(Strings.UnknownType, (int)b);
         }
     }
 }

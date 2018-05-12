@@ -43,19 +43,20 @@ namespace TricksterMap.Data
             switch (Type)
             {
                 case 0x00:
-                    return "Setting Debris (Unknown/0)";
+                    return Strings.SetDebris;
                 case 0x01:
-                    return "Portal Entrance Range";
+                    // The range in which a user can enter a portal from
+                    return Strings.PortalEntranceRange;
                 case 0x02:
-                    return "Monster Movement Range";
+                    return Strings.MonsterMovementRange;
                 case 0x05:
-                    return "Monster Gather Range";
+                    return Strings.MonsterGatherRange;
                 case 0x06:
-                    return "NPC Movement Range";
+                    return Strings.NPCMovementRange;
                 case 0x09:
-                    return "Monster Spawn Range";
+                    return Strings.MonsterSpawnRange;
                 case 0x0A:
-                    return "GvG Respawn Range";
+                    return Strings.GvGSpawnRange;
             }
 
             return String.Format(Strings.UnknownType, Type);

@@ -61,6 +61,15 @@ namespace TricksterMap {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Collision Data.
+        /// </summary>
+        internal static string CollisionData {
+            get {
+                return ResourceManager.GetString("CollisionData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Config Layer - Collision Data ({0}).
         /// </summary>
         internal static string CollisionFormTitle {
@@ -106,6 +115,33 @@ namespace TricksterMap {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ground Type.
+        /// </summary>
+        internal static string GroundType {
+            get {
+                return ResourceManager.GetString("GroundType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GvG Spawn Range.
+        /// </summary>
+        internal static string GvGSpawnRange {
+            get {
+                return ResourceManager.GetString("GvGSpawnRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Height Data.
+        /// </summary>
+        internal static string HeightData {
+            get {
+                return ResourceManager.GetString("HeightData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid Trickster map file..
         /// </summary>
         internal static string InvalidMapFileError {
@@ -124,11 +160,38 @@ namespace TricksterMap {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Monster Gather Range.
+        /// </summary>
+        internal static string MonsterGatherRange {
+            get {
+                return ResourceManager.GetString("MonsterGatherRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monster Movement Range.
+        /// </summary>
+        internal static string MonsterMovementRange {
+            get {
+                return ResourceManager.GetString("MonsterMovementRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Monster Spawn.
         /// </summary>
         internal static string MonsterSpawnPoint {
             get {
                 return ResourceManager.GetString("MonsterSpawnPoint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monster Spawn Range.
+        /// </summary>
+        internal static string MonsterSpawnRange {
+            get {
+                return ResourceManager.GetString("MonsterSpawnRange", resourceCulture);
             }
         }
         
@@ -160,11 +223,47 @@ namespace TricksterMap {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to NPC Movement Range.
+        /// </summary>
+        internal static string NPCMovementRange {
+            get {
+                return ResourceManager.GetString("NPCMovementRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Trickster Map Data Files (*.md3).
         /// </summary>
         internal static string OpenType {
             get {
                 return ResourceManager.GetString("OpenType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Portal.
+        /// </summary>
+        internal static string Portal {
+            get {
+                return ResourceManager.GetString("Portal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Portal Entrance Range.
+        /// </summary>
+        internal static string PortalEntranceRange {
+            get {
+                return ResourceManager.GetString("PortalEntranceRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MS Sans Serif.
+        /// </summary>
+        internal static string PreferredFont {
+            get {
+                return ResourceManager.GetString("PreferredFont", resourceCulture);
             }
         }
         
@@ -178,11 +277,38 @@ namespace TricksterMap {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Set Debris (?).
+        /// </summary>
+        internal static string SetDebris {
+            get {
+                return ResourceManager.GetString("SetDebris", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Shop NPC.
         /// </summary>
         internal static string ShopNPC {
             get {
                 return ResourceManager.GetString("ShopNPC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Skill Shop NPC.
+        /// </summary>
+        internal static string SkillNPC {
+            get {
+                return ResourceManager.GetString("SkillNPC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Special Effects.
+        /// </summary>
+        internal static string SpecialEffects {
+            get {
+                return ResourceManager.GetString("SpecialEffects", resourceCulture);
             }
         }
         
@@ -241,11 +367,29 @@ namespace TricksterMap {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to X: {0}.
+        /// </summary>
+        internal static string XSize {
+            get {
+                return ResourceManager.GetString("XSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Y.
         /// </summary>
         internal static string YPos {
             get {
                 return ResourceManager.GetString("YPos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Y: {0}.
+        /// </summary>
+        internal static string YSize {
+            get {
+                return ResourceManager.GetString("YSize", resourceCulture);
             }
         }
     }

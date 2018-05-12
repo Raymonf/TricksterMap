@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CollisionFormTitle" xml:space="preserve">
-    <value>Config Layer - 碰撞資料 （{0}）</value>
+    <value>Config Layer - 碰撞資源 （{0}）</value>
     <comment>{0} is the map filename</comment>
   </data>
   <data name="File" xml:space="preserve">
@@ -187,5 +187,58 @@
   </data>
   <data name="UnknownType" xml:space="preserve">
     <value>未知類型（{0}）</value>
+  </data>
+  <data name="CollisionData" xml:space="preserve">
+    <value>碰撞資源</value>
+  </data>
+  <data name="GroundType" xml:space="preserve">
+    <value>土壤類型</value>
+  </data>
+  <data name="GvGSpawnRange" xml:space="preserve">
+    <value>GvG生成區</value>
+  </data>
+  <data name="HeightData" xml:space="preserve">
+    <value>高度資源</value>
+  </data>
+  <data name="MonsterGatherRange" xml:space="preserve">
+    <value>怪物聚集範圍</value>
+  </data>
+  <data name="MonsterMovementRange" xml:space="preserve">
+    <value>怪物移動範圍</value>
+  </data>
+  <data name="MonsterSpawnRange" xml:space="preserve">
+    <value>怪物孵化區</value>
+  </data>
+  <data name="NPCMovementRange" xml:space="preserve">
+    <value>NPC移動範圍</value>
+  </data>
+  <data name="Portal" xml:space="preserve">
+    <value>傳送門</value>
+  </data>
+  <data name="PortalEntranceRange" xml:space="preserve">
+    <value>進入傳送門範圍</value>
+    <comment>The range in which a user can enter a portal from</comment>
+  </data>
+  <data name="PreferredFont" xml:space="preserve">
+    <value>Microsoft JhengHei UI</value>
+    <comment>Used for rendering text</comment>
+  </data>
+  <data name="SetDebris" xml:space="preserve">
+    <value>設定殘骸 (?)</value>
+    <comment>No idea what this is tbh</comment>
+  </data>
+  <data name="SkillNPC" xml:space="preserve">
+    <value>NPC（技能商店）</value>
+  </data>
+  <data name="SpecialEffects" xml:space="preserve">
+    <value>特殊效果</value>
+  </data>
+  <data name="XSize" xml:space="preserve">
+    <value>X大小：{0}</value>
+    <comment>X size, for the colliison data legend</comment>
+  </data>
+  <data name="YSize" xml:space="preserve">
+    <value>Y大小：{0}</value>
+    <comment>Y size, for the collision data legend</comment>
   </data>
 </root>
