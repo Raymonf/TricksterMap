@@ -8,6 +8,11 @@ namespace TricksterMap.Data
 {
     public class PointObject
     {
+        public static int[] ValidTypes =
+        {
+            0x01, 0x02, 0x03, 0x04, 0x05, 0x07, 0x09, 0x0A, 0x0D
+        };
+
         /// <summary>
         /// Position Id / PosId
         /// </summary>
@@ -43,6 +48,15 @@ namespace TricksterMap.Data
         /// </summary>
         /// <returns>Name of the object's type</returns>
         public string GetTypeName()
+        {
+            return GetTypeNameFromId(Type);
+        }
+
+        /// <summary>
+        /// Gets the name of a point object's type
+        /// </summary>
+        /// <returns>Name of an object's type</returns>
+        public static string GetTypeNameFromId(int Type)
         {
             switch (Type)
             {

@@ -126,6 +126,7 @@ namespace TricksterMap
             for (int i = 0; i < effectCount; i++)
             {
                 var effect = effectData.Skip(i * 52).Take(52).ToArray();
+                mapData.EffectObjects.Add(effect);
             }
 
             return mapData;

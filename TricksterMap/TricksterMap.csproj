@@ -58,12 +58,24 @@
     <Compile Include="ConfigLayerCollisionForm.Designer.cs">
       <DependentUpon>ConfigLayerCollisionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Create\CreatePointObject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Create\CreatePointObject.Designer.cs">
+      <DependentUpon>CreatePointObject.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data\ConfigLayer.cs" />
     <Compile Include="Data\MapDataInfo.cs" />
     <Compile Include="Data\PointObject.cs" />
     <Compile Include="Data\RangeObject.cs" />
     <Compile Include="Data\TileData.cs" />
     <Compile Include="LvCtl.cs" />
+    <Compile Include="MapControlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapControlForm.Designer.cs">
+      <DependentUpon>MapControlForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MapDataLoader.cs" />
     <Compile Include="MapViewForm.cs">
       <SubType>Form</SubType>
@@ -93,6 +105,12 @@
     <Compile Include="TileReader.cs" />
     <EmbeddedResource Include="ConfigLayerCollisionForm.resx">
       <DependentUpon>ConfigLayerCollisionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Create\CreatePointObject.resx">
+      <DependentUpon>CreatePointObject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapControlForm.resx">
+      <DependentUpon>MapControlForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MapViewForm.resx">
       <DependentUpon>MapViewForm.cs</DependentUpon>

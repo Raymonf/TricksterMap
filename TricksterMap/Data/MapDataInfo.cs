@@ -129,7 +129,15 @@ namespace TricksterMap.Data
         /// <summary>
         /// Effect object list (TODO)
         /// </summary>
-        public List<object> EffectObjects { get; set; } = new List<object>();
+        public List<byte[]> EffectObjects { get; set; } = new List<byte[]>();
+
+        #endregion
+
+        #region Temporary Data
+
+        public int BacFileSize { get; set; } = 0;
+        public int TilFileSize { get; set; } = 0;
+        public int LyrFileSize { get; set; } = 0;
 
         #endregion
     }

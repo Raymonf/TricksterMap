@@ -7,12 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TricksterMap.Create;
+using TricksterMap.Data;
 
 namespace TricksterMap
 {
     public partial class PointObjectForm : Form
     {
-        public PointObjectForm()
+        public MapDataInfo Map = null;
+        public Dictionary<string, int> types = new Dictionary<string, int>();
+
+    public PointObjectForm()
         {
             InitializeComponent();
 
@@ -21,6 +26,43 @@ namespace TricksterMap
             mapIdHeader.Text = Strings.MapID;
             xPosHeader.Text = Strings.XPos;
             yPosHeader.Text = Strings.YPos;
+
+            foreach (var type in PointObject.ValidTypes)
+            {
+                var typeName = PointObject.GetTypeNameFromId(type);
+
+                types.Add(typeName, type);
+            }
+        }
+
+        public void RepopulateData()
+        {
+            pointList.Items.Clear();
+
+            foreach (var point in Map.PointObjects)
+            {
+                pointList.Items.Add(new ListViewItem(new string[] { point.Id.ToString(), point.GetTypeName(), point.MapId.ToString(), point.X.ToString(), point.Y.ToString() }));
+            }
+        }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            var createForm = new CreatePointObject()
+            {
+                Map = Map,
+                PointListForm = this
+            };
+
+            createForm.ShowDialog();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (pointList.SelectedIndices.Count > 0)
+            {
+                Map.PointObjects.RemoveAt(pointList.Items.IndexOf(pointList.SelectedItems[0]));
+                pointList.SelectedItems[0].Remove();
+            }
         }
     }
 }

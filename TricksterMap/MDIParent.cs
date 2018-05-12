@@ -54,13 +54,11 @@ namespace TricksterMap
                     var pointForm = new PointObjectForm
                     {
                         Text = "Point Object Data (" + fileName + ")",
-                        MdiParent = this
+                        MdiParent = this,
+                        Map = mapInfo
                     };
 
-                    foreach (var point in mapInfo.PointObjects)
-                    {
-                        pointForm.pointList.Items.Add(new ListViewItem(new string[] { point.Id.ToString(), point.GetTypeName(), point.MapId.ToString(), point.X.ToString(), point.Y.ToString() }));
-                    }
+                    pointForm.RepopulateData();
 
                     pointForm.Show();
 
@@ -93,20 +91,36 @@ namespace TricksterMap
                     var mapViewForm = new MapViewForm
                     {
                         Text = "Tile View (" + fileName.Replace(".md3", ".til") + ")",
-                        MdiParent = this
+                        MdiParent = this,
+                        Map = mapInfo
                     };
 
                     mapViewForm.tiles = tiles;
 
                     mapViewForm.Show();
+
+                    // Get filesizes for temporary stuff
+                    mapInfo.BacFileSize = (int)new FileInfo(fileName.Replace(".md3", ".bac")).Length;
+                    mapInfo.TilFileSize = (int)new FileInfo(fileName.Replace(".md3", ".til")).Length;
+                    mapInfo.LyrFileSize = (int)new FileInfo(fileName.Replace(".md3", ".lyr")).Length;
+
+                    var controlForm = new MapControlForm()
+                    {
+                        MdiParent = this,
+                        Map = mapInfo
+                    };
+
+                    controlForm.Show();
                 }
             }
         }
 
         private void OpenFile(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = Strings.OpenType + "|*.md3|All Files (*.*)|*.*";
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Filter = Strings.OpenType + "|*.md3|All Files (*.*)|*.*"
+            };
 
             if (openFileDialog.ShowDialog(this) == DialogResult.OK)
             {

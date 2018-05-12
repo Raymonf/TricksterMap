@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TricksterMap.Data;
 
 namespace TricksterMap
 {
     public partial class MapViewForm : Form
     {
+        public MapDataInfo Map = null;
         public List<Bitmap> tiles = null;
         int i = 0;
 
