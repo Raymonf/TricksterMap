@@ -27,25 +27,28 @@ namespace TricksterMap
 
         private void OpenMap(string fileName)
         {
-            using (var reader = new BinaryReader(File.Open(fileName, FileMode.Open)))
+            using (var fileStream = File.Open(fileName, FileMode.Open))
             {
-                var mapInfo = MapDataLoader.Load(reader);
-
-                foreach (var layer in mapInfo.ConfigLayers)
+                using (var reader = new BinaryReader(fileStream))
                 {
-                    if (layer.Type == 1)
+                    var mapInfo = MapDataLoader.Load(reader);
+
+                    foreach (var layer in mapInfo.ConfigLayers)
                     {
-                        var collisionForm = new ConfigLayerCollisionForm
+                        if (layer.Type == 1)
                         {
-                            MdiParent = this,
-                            Text = String.Format(Strings.CollisionFormTitle, fileName)
-                        };
+                            var collisionForm = new ConfigLayerCollisionForm
+                            {
+                                MdiParent = this,
+                                Text = String.Format(Strings.CollisionFormTitle, fileName)
+                            };
 
-                        // Load the collision data from the layer
-                        collisionForm.LoadData(layer);
+                            // Load the collision data from the layer
+                            collisionForm.LoadData(layer);
 
-                        // Show the actual form
-                        collisionForm.Show();
+                            // Show the actual form
+                            collisionForm.Show();
+                        }
                     }
 
                     var pointForm = new PointObjectForm
@@ -60,6 +63,41 @@ namespace TricksterMap
                     }
 
                     pointForm.Show();
+
+                    // At this point, we need to grab the tile data
+                    var tiles = TileReader.Read(mapInfo, File.Open(fileName.Replace(".md3", ".til"), FileMode.Open));
+
+                    var bmp = new Bitmap(mapInfo.MapSizeX, mapInfo.MapSizeY);
+
+                    using (var g = Graphics.FromImage(bmp))
+                    {
+                        var addressIndex = 0;
+                        foreach (var tile in tiles)
+                        {
+                            var tileIndex = 0;
+
+                            for (int i = 0; i < tile.TilesY; i++)
+                            {
+                                for (int j = 0; j < tile.TilesX; j++)
+                                {
+                                    g.DrawImage(tile.Bitmaps[tileIndex], tileIndex * mapInfo.TileSizeX, addressIndex * mapInfo.TileSizeY, mapInfo.TileSizeX, mapInfo.TileSizeY);
+                                    tileIndex++;
+                                }
+                            }
+
+                            addressIndex++;
+                        }
+                    }
+
+                    var mapViewForm = new MapViewForm
+                    {
+                        Text = "Map View (" + fileName + ")",
+                        MdiParent = this
+                    };
+
+                    mapViewForm.mapPicture.BackgroundImage = bmp;
+
+                    mapViewForm.Show();
                 }
             }
         }

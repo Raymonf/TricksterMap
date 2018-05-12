@@ -35,6 +35,9 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ionic.Zlib, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ionic.Zlib.1.9.1.5\lib\Ionic.Zlib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -48,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompressedFileLoader.cs" />
     <Compile Include="ConfigLayerCollisionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,8 +62,15 @@
     <Compile Include="Data\MapDataInfo.cs" />
     <Compile Include="Data\PointObject.cs" />
     <Compile Include="Data\RangeObject.cs" />
+    <Compile Include="Data\TileData.cs" />
     <Compile Include="LvCtl.cs" />
     <Compile Include="MapDataLoader.cs" />
+    <Compile Include="MapViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapViewForm.Designer.cs">
+      <DependentUpon>MapViewForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MDIParent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +94,9 @@
     <EmbeddedResource Include="ConfigLayerCollisionForm.resx">
       <DependentUpon>ConfigLayerCollisionForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MapViewForm.resx">
+      <DependentUpon>MapViewForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MDIParent.resx">
       <DependentUpon>MDIParent.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,6 +118,7 @@
       <LastGenOutput>Strings1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Strings.zh.resx" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

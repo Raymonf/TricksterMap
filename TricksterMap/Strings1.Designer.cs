@@ -259,7 +259,7 @@ namespace TricksterMap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to MS Sans Serif.
+        ///   Looks up a localized string similar to Segoe UI.
         /// </summary>
         internal static string PreferredFont {
             get {
