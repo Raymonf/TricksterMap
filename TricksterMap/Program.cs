@@ -21,7 +21,8 @@ namespace TricksterMap
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MDIParent());
+            new MDIParent().Show();
+            Application.Run();
         }
     }
 }

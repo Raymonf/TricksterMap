@@ -276,4 +276,7 @@
   <data name="TileView" xml:space="preserve">
     <value>平鋪顯示（{0}）</value>
   </data>
+  <data name="Language" xml:space="preserve">
+    <value>語言</value>
+  </data>
 </root>

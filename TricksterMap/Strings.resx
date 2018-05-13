@@ -273,6 +273,9 @@
     <comment>Map control form button</comment>
   </data>
   <data name="TileView" xml:space="preserve">
-    <value>Tile View ({0}}</value>
+    <value>Tile View ({0})</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
   </data>
 </root>

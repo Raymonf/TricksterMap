@@ -9,11 +9,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
+using System.Reflection;
+using System.Threading;
 
 namespace TricksterMap
 {
     public partial class MDIParent : Form
     {
+        bool ChangedLanguage = false;
+
         public MDIParent()
         {
             InitializeComponent();
@@ -21,6 +26,7 @@ namespace TricksterMap
             fileMenu.Text = Strings.File;
             openToolStripMenuItem.Text = Strings.FileOpen;
             exitToolStripMenuItem.Text = Strings.FileExit;
+            languageToolStripMenuItem.Text = Strings.Language;
             
             this.SetFonts();
         }
@@ -92,9 +98,10 @@ namespace TricksterMap
                     {
                         Text = String.Format(Strings.TileView, fileName.Replace(".md3", ".til")),
                         MdiParent = this,
-                        Map = mapInfo,
-                        tiles = tiles
+                        Map = mapInfo
                     };
+
+                    tileViewForm.tiles = tiles;
 
                     tileViewForm.Show();
 
@@ -143,6 +150,44 @@ namespace TricksterMap
 #pragma warning restore IDE1006 // Naming Styles
         {
             OpenMap("map_sq00.md3");
+        }
+
+        public IEnumerable<CultureInfo> GetSupportedCultures()
+        {
+            CultureInfo[] culture = CultureInfo.GetCultures(CultureTypes.AllCultures);
+            string exeLocation = Path.GetDirectoryName(Uri.UnescapeDataString(new UriBuilder(Assembly.GetExecutingAssembly().CodeBase).Path));
+            return culture.Where(cultureInfo => Directory.Exists(Path.Combine(exeLocation, cultureInfo.Name)));
+        }
+
+        private void MDIParent_Load(object sender, EventArgs e)
+        {
+            var cultures = GetSupportedCultures();
+            
+            foreach(var culture in cultures)
+            {
+                var lang = new ToolStripMenuItem($"{(culture.TwoLetterISOLanguageName == "iv" ? "English" : culture.NativeName)}");
+
+                lang.Click += (object s, EventArgs ea) =>
+                {
+                    ChangedLanguage = true;
+                    Thread.CurrentThread.CurrentCulture = culture;
+                    Thread.CurrentThread.CurrentUICulture = culture;
+                    new MDIParent().Show();
+                    Close();
+                };
+
+                languageToolStripMenuItem.DropDownItems.Add(lang);
+            }
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+
+            if (e.CloseReason != CloseReason.WindowsShutDown && !ChangedLanguage)
+            {
+                Application.Exit();
+            }
         }
     }
 }

@@ -205,6 +205,15 @@ namespace TricksterMap {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Language.
+        /// </summary>
+        internal static string Language {
+            get {
+                return ResourceManager.GetString("Language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Map Control ({0}).
         /// </summary>
         internal static string MapControl {
@@ -421,7 +430,7 @@ namespace TricksterMap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tile View ({0}}.
+        ///   Looks up a localized string similar to Tile View ({0}).
         /// </summary>
         internal static string TileView {
             get {
