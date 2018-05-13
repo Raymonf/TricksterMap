@@ -75,6 +75,7 @@
             this.pointList.TabIndex = 3;
             this.pointList.UseCompatibleStateImageBehavior = false;
             this.pointList.View = System.Windows.Forms.View.Details;
+            this.pointList.DoubleClick += new System.EventHandler(this.pointList_DoubleClick);
             // 
             // idHeader
             // 
@@ -159,6 +160,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "PointObjectForm";
             this.Text = "Point Object Data";
+            this.Load += new System.EventHandler(this.PointObjectForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);

@@ -11,15 +11,17 @@ using TricksterMap.Data;
 
 namespace TricksterMap
 {
-    public partial class MapViewForm : Form
+    public partial class TileViewForm : Form
     {
         public MapDataInfo Map = null;
         public List<Bitmap> tiles = null;
         int i = 0;
 
-        public MapViewForm()
+        public TileViewForm()
         {
             InitializeComponent();
+
+            this.SetFonts();
         }
 
         private void MapViewForm_Load(object sender, EventArgs e)

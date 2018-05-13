@@ -42,6 +42,8 @@ namespace TricksterMap.Create
             lblX.Text = Strings.XPos;
             lblY.Text = Strings.YPos;
             btnCreate.Text = Strings.Create;
+            
+            this.SetFonts();
         }
 
         private void CreatePointObject_Load(object sender, EventArgs e)

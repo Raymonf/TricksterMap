@@ -25,6 +25,8 @@ namespace TricksterMap
         public ConfigLayerCollisionForm()
         {
             InitializeComponent();
+            
+            this.SetFonts();
         }
 
         public void LoadData(ConfigLayer layer)

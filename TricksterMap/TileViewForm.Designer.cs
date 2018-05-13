@@ -1,6 +1,6 @@
 ﻿namespace TricksterMap
 {
-    partial class MapViewForm
+    partial class TileViewForm
     {
         /// <summary>
         /// Required designer variable.

@@ -21,6 +21,8 @@ namespace TricksterMap
             InitializeComponent();
 
             btnSaveAs.Text = Strings.SaveAs;
+            
+            this.SetFonts();
         }
 
         private byte[] GetPointObjectBytes()

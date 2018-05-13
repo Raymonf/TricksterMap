@@ -17,7 +17,7 @@ namespace TricksterMap
         public MapDataInfo Map = null;
         public Dictionary<string, int> types = new Dictionary<string, int>();
 
-    public PointObjectForm()
+        public PointObjectForm()
         {
             InitializeComponent();
 
@@ -77,6 +77,23 @@ namespace TricksterMap
 #pragma warning disable IDE1006 // Naming Styles
         private void btnEdit_Click(object sender, EventArgs e)
 #pragma warning restore IDE1006 // Naming Styles
+        {
+            EditSelectedItem();
+        }
+
+        private void PointObjectForm_Load(object sender, EventArgs e)
+        {
+            this.SetFonts();
+        }
+
+#pragma warning disable IDE1006 // Naming Styles
+        private void pointList_DoubleClick(object sender, EventArgs e)
+#pragma warning restore IDE1006 // Naming Styles
+        {
+            EditSelectedItem();
+        }
+
+        private void EditSelectedItem()
         {
             if (pointList.SelectedIndices.Count > 0)
             {

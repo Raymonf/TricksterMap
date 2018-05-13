@@ -18,11 +18,11 @@ namespace TricksterMap
         {
             InitializeComponent();
 
-            AutoScaleMode = AutoScaleMode.Dpi;
-
             fileMenu.Text = Strings.File;
             openToolStripMenuItem.Text = Strings.FileOpen;
             exitToolStripMenuItem.Text = Strings.FileExit;
+            
+            this.SetFonts();
         }
 
         private void OpenMap(string fileName)
@@ -79,7 +79,7 @@ namespace TricksterMap
                                 {
                                     g.DrawImage(tile.Bitmaps[tileIndex], j * mapInfo.TileSizeX, i * mapInfo.TileSizeY, mapInfo.TileSizeX, mapInfo.TileSizeY);
                                     g.DrawString((tileIndex + 1).ToString(), new Font("Arial", 10), Brushes.Black, j * mapInfo.TileSizeX, i * mapInfo.TileSizeY);
-                                    Console.WriteLine("{0}: ({1}, {2})", tileIndex + 1, j, i);
+                                    //Console.WriteLine("{0}: ({1}, {2})", tileIndex + 1, j, i);
                                     tileIndex++;
                                 }
                             }
@@ -88,16 +88,15 @@ namespace TricksterMap
                         tiles.Add(bmp);
                     }
 
-                    var mapViewForm = new MapViewForm
+                    var tileViewForm = new TileViewForm
                     {
                         Text = String.Format(Strings.TileView, fileName.Replace(".md3", ".til")),
                         MdiParent = this,
-                        Map = mapInfo
+                        Map = mapInfo,
+                        tiles = tiles
                     };
 
-                    mapViewForm.tiles = tiles;
-
-                    mapViewForm.Show();
+                    tileViewForm.Show();
 
                     // Get filesizes for temporary stuff
                     mapInfo.BacFileSize = (int)new FileInfo(fileName.Replace(".md3", ".bac")).Length;
