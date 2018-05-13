@@ -150,7 +150,7 @@
     <value>None</value>
   </data>
   <data name="NORIEntity" xml:space="preserve">
-    <value>NORI Entity (?)</value>
+    <value>NORI Entity</value>
     <comment>Unconfirmed</comment>
   </data>
   <data name="NotWalkable" xml:space="preserve">

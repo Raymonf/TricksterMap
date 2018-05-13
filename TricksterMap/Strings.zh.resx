@@ -151,7 +151,7 @@
     <value>無用</value>
   </data>
   <data name="NORIEntity" xml:space="preserve">
-    <value>NORI 實體 (?)</value>
+    <value>NORI 實體</value>
     <comment>Unconfirmed</comment>
   </data>
   <data name="NotWalkable" xml:space="preserve">

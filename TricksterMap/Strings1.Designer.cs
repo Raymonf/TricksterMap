@@ -268,7 +268,7 @@ namespace TricksterMap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to NORI Entity (?).
+        ///   Looks up a localized string similar to NORI Entity.
         /// </summary>
         internal static string NORIEntity {
             get {
