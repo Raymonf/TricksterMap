@@ -29,8 +29,6 @@ namespace TricksterMap
                     throw new Exception("Decompressed size does not match the header's value.");
                 }
 
-                File.WriteAllBytes("Result.decomp", decompressed);
-
                 return decompressed;
             }
         }

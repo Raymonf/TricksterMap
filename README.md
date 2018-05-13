@@ -1,5 +1,9 @@
 # TricksterMap
 
+[![Build status](https://ci.appveyor.com/api/projects/status/0vc5mwjjxs026985/branch/master?svg=true)](https://ci.appveyor.com/project/Raymonf/trickstermap/branch/master)
+
+**[Compiled binaries are available on AppVeyor](https://ci.appveyor.com/project/Raymonf/trickstermap/build/artifacts)**
+
 ## Introduction
 
 This is a project written in C# whose end goal is to be able to read and write map data files for a game called Trickster Online. The project was designed with at least partial localization support in mind, and an example (low-quality) Chinese localization exists.
