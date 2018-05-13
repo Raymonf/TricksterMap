@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CollisionFormTitle" xml:space="preserve">
-    <value>Config Layer - 碰撞資源 （{0}）</value>
+    <value>Config Layer - 碰撞數據 （{0}）</value>
     <comment>{0} is the map filename</comment>
   </data>
   <data name="File" xml:space="preserve">
@@ -180,16 +180,16 @@
     <value>能通過的部分</value>
   </data>
   <data name="XPos" xml:space="preserve">
-    <value>X坐標</value>
+    <value>X位置</value>
   </data>
   <data name="YPos" xml:space="preserve">
-    <value>Y坐標</value>
+    <value>Y位置</value>
   </data>
   <data name="UnknownType" xml:space="preserve">
     <value>未知類型（{0}）</value>
   </data>
   <data name="CollisionData" xml:space="preserve">
-    <value>碰撞資源</value>
+    <value>碰撞數據</value>
   </data>
   <data name="GroundType" xml:space="preserve">
     <value>土壤類型</value>
@@ -198,7 +198,7 @@
     <value>GvG生成區</value>
   </data>
   <data name="HeightData" xml:space="preserve">
-    <value>高度資源</value>
+    <value>高度數據</value>
   </data>
   <data name="MonsterGatherRange" xml:space="preserve">
     <value>怪物聚集範圍</value>
@@ -240,5 +240,40 @@
   <data name="YSize" xml:space="preserve">
     <value>Y大小：{0}</value>
     <comment>Y size, for the collision data legend</comment>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>創建</value>
+  </data>
+  <data name="CreatePointObject" xml:space="preserve">
+    <value>創建 Point Object</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>刪除</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>編輯</value>
+  </data>
+  <data name="EditPointObject" xml:space="preserve">
+    <value>編輯 Point Object</value>
+  </data>
+  <data name="ID" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="MapControl" xml:space="preserve">
+    <value>地圖控制（{0}）</value>
+    <comment>{0} is the filename</comment>
+  </data>
+  <data name="NumOfNum" xml:space="preserve">
+    <value>{1} 之 {0}</value>
+  </data>
+  <data name="PointObjectView" xml:space="preserve">
+    <value>Point Object 數據（{0}）</value>
+  </data>
+  <data name="SaveAs" xml:space="preserve">
+    <value>另存為...</value>
+    <comment>Map control form button</comment>
+  </data>
+  <data name="TileView" xml:space="preserve">
+    <value>平鋪顯示（{0}）</value>
   </data>
 </root>

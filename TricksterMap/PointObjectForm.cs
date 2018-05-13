@@ -22,10 +22,15 @@ namespace TricksterMap
             InitializeComponent();
 
             // Initialize localization
+            idHeader.Text = Strings.ID;
             typeHeader.Text = Strings.Type;
             mapIdHeader.Text = Strings.MapID;
             xPosHeader.Text = Strings.XPos;
             yPosHeader.Text = Strings.YPos;
+
+            btnCreate.Text = Strings.Create;
+            btnDelete.Text = Strings.Delete;
+            btnEdit.Text = Strings.Edit;
 
             foreach (var type in PointObject.ValidTypes)
             {
@@ -45,7 +50,9 @@ namespace TricksterMap
             }
         }
 
+#pragma warning disable IDE1006 // Naming Styles
         private void btnCreate_Click(object sender, EventArgs e)
+#pragma warning restore IDE1006 // Naming Styles
         {
             var createForm = new CreatePointObject()
             {
@@ -56,7 +63,9 @@ namespace TricksterMap
             createForm.ShowDialog();
         }
 
+#pragma warning disable IDE1006 // Naming Styles
         private void btnDelete_Click(object sender, EventArgs e)
+#pragma warning restore IDE1006 // Naming Styles
         {
             if (pointList.SelectedIndices.Count > 0)
             {
@@ -65,7 +74,9 @@ namespace TricksterMap
             }
         }
 
+#pragma warning disable IDE1006 // Naming Styles
         private void btnEdit_Click(object sender, EventArgs e)
+#pragma warning restore IDE1006 // Naming Styles
         {
             if (pointList.SelectedIndices.Count > 0)
             {
@@ -79,11 +90,11 @@ namespace TricksterMap
                 var createForm = new CreatePointObject()
                 {
                     Map = Map,
-                    PointListForm = this,
-                    Text = "Edit Point Object"
+                    PointListForm = this
                 };
 
-                createForm.btnCreate.Text = "Edit";
+                createForm.Text = Strings.EditPointObject;
+                createForm.btnCreate.Text = Strings.Edit;
                 createForm.txtId.Text = point.Id.ToString();
                 createForm.txtMapId.Text = point.MapId.ToString();
                 createForm.txtX.Text = point.X.ToString();

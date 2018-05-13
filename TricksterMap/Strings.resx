@@ -240,4 +240,39 @@
     <value>Y: {0}</value>
     <comment>Y size, for the collision data legend</comment>
   </data>
+  <data name="Create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="CreatePointObject" xml:space="preserve">
+    <value>Create Point Object</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="EditPointObject" xml:space="preserve">
+    <value>Edit Point Object</value>
+  </data>
+  <data name="ID" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="MapControl" xml:space="preserve">
+    <value>Map Control ({0})</value>
+    <comment>{0} is the filename</comment>
+  </data>
+  <data name="NumOfNum" xml:space="preserve">
+    <value>{0} of {1}</value>
+  </data>
+  <data name="PointObjectView" xml:space="preserve">
+    <value>Point Object Data ({0})</value>
+  </data>
+  <data name="SaveAs" xml:space="preserve">
+    <value>Save As...</value>
+    <comment>Map control form button</comment>
+  </data>
+  <data name="TileView" xml:space="preserve">
+    <value>Tile View ({0}}</value>
+  </data>
 </root>

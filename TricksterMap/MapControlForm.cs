@@ -19,6 +19,8 @@ namespace TricksterMap
         public MapControlForm()
         {
             InitializeComponent();
+
+            btnSaveAs.Text = Strings.SaveAs;
         }
 
         private byte[] GetPointObjectBytes()
@@ -105,7 +107,9 @@ namespace TricksterMap
             }
         }
 
+#pragma warning disable IDE1006 // Naming Styles
         private void btnSaveAs_Click(object sender, EventArgs e)
+#pragma warning restore IDE1006 // Naming Styles
         {
             SaveFileDialog saveDialog = new SaveFileDialog
             {

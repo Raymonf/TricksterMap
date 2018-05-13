@@ -53,7 +53,7 @@ namespace TricksterMap
 
                     var pointForm = new PointObjectForm
                     {
-                        Text = "Point Object Data (" + fileName + ")",
+                        Text = String.Format(Strings.PointObjectView, fileName),
                         MdiParent = this,
                         Map = mapInfo
                     };
@@ -90,7 +90,7 @@ namespace TricksterMap
 
                     var mapViewForm = new MapViewForm
                     {
-                        Text = "Tile View (" + fileName.Replace(".md3", ".til") + ")",
+                        Text = String.Format(Strings.TileView, fileName.Replace(".md3", ".til")),
                         MdiParent = this,
                         Map = mapInfo
                     };
@@ -107,7 +107,8 @@ namespace TricksterMap
                     var controlForm = new MapControlForm()
                     {
                         MdiParent = this,
-                        Map = mapInfo
+                        Map = mapInfo,
+                        Text = String.Format(Strings.MapControl, fileName)
                     };
 
                     controlForm.Show();
@@ -138,7 +139,9 @@ namespace TricksterMap
             return BitConverter.ToString(ba).Replace("-", " ").ToUpper();
         }
 
+#pragma warning disable IDE1006 // Naming Styles
         private void loadMegalopolisMenuItem_Click(object sender, EventArgs e)
+#pragma warning restore IDE1006 // Naming Styles
         {
             OpenMap("map_sq00.md3");
         }

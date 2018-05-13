@@ -79,6 +79,51 @@ namespace TricksterMap {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Create.
+        /// </summary>
+        internal static string Create {
+            get {
+                return ResourceManager.GetString("Create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create Point Object.
+        /// </summary>
+        internal static string CreatePointObject {
+            get {
+                return ResourceManager.GetString("CreatePointObject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        internal static string Delete {
+            get {
+                return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit.
+        /// </summary>
+        internal static string Edit {
+            get {
+                return ResourceManager.GetString("Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Point Object.
+        /// </summary>
+        internal static string EditPointObject {
+            get {
+                return ResourceManager.GetString("EditPointObject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to File.
         /// </summary>
         internal static string File {
@@ -142,11 +187,29 @@ namespace TricksterMap {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ID.
+        /// </summary>
+        internal static string ID {
+            get {
+                return ResourceManager.GetString("ID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid Trickster map file..
         /// </summary>
         internal static string InvalidMapFileError {
             get {
                 return ResourceManager.GetString("InvalidMapFileError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Map Control ({0}).
+        /// </summary>
+        internal static string MapControl {
+            get {
+                return ResourceManager.GetString("MapControl", resourceCulture);
             }
         }
         
@@ -232,11 +295,29 @@ namespace TricksterMap {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} of {1}.
+        /// </summary>
+        internal static string NumOfNum {
+            get {
+                return ResourceManager.GetString("NumOfNum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Trickster Map Data Files (*.md3).
         /// </summary>
         internal static string OpenType {
             get {
                 return ResourceManager.GetString("OpenType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Point Object Data ({0}).
+        /// </summary>
+        internal static string PointObjectView {
+            get {
+                return ResourceManager.GetString("PointObjectView", resourceCulture);
             }
         }
         
@@ -273,6 +354,15 @@ namespace TricksterMap {
         internal static string RespawnLocation {
             get {
                 return ResourceManager.GetString("RespawnLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save As....
+        /// </summary>
+        internal static string SaveAs {
+            get {
+                return ResourceManager.GetString("SaveAs", resourceCulture);
             }
         }
         
@@ -327,6 +417,15 @@ namespace TricksterMap {
         internal static string TeleportNPCSpawn {
             get {
                 return ResourceManager.GetString("TeleportNPCSpawn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tile View ({0}}.
+        /// </summary>
+        internal static string TileView {
+            get {
+                return ResourceManager.GetString("TileView", resourceCulture);
             }
         }
         

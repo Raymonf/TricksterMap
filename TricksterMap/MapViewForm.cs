@@ -28,7 +28,7 @@ namespace TricksterMap
             {
                 i = 0;
 
-                lblInfo.Text = (i + 1) + " of " + tiles.Count;
+                lblInfo.Text = String.Format(Strings.NumOfNum, (i + 1), tiles.Count);
 
                 mapPicture.BackgroundImage = tiles[0];
             }
@@ -38,7 +38,9 @@ namespace TricksterMap
             }
         }
 
+#pragma warning disable IDE1006 // Naming Styles
         private void btnForward_Click(object sender, EventArgs e)
+#pragma warning restore IDE1006 // Naming Styles
         {
             if (tiles.Count > 0)
             {
@@ -50,14 +52,16 @@ namespace TricksterMap
                 {
                     i++;
                 }
-
-                lblInfo.Text = (i + 1) + " of " + tiles.Count;
+                
+                lblInfo.Text = String.Format(Strings.NumOfNum, (i + 1), tiles.Count);
 
                 mapPicture.BackgroundImage = tiles[i];
             }
         }
 
+#pragma warning disable IDE1006 // Naming Styles
         private void btnBack_Click(object sender, EventArgs e)
+#pragma warning restore IDE1006 // Naming Styles
         {
             if (tiles.Count > 0)
             {
@@ -70,7 +74,7 @@ namespace TricksterMap
                     i--;
                 }
 
-                lblInfo.Text = (i + 1) + " of " + tiles.Count;
+                lblInfo.Text = String.Format(Strings.NumOfNum, (i + 1), tiles.Count);
 
                 mapPicture.BackgroundImage = tiles[i];
             }

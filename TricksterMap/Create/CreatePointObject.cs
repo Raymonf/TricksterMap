@@ -34,6 +34,14 @@ namespace TricksterMap.Create
             {
                 cmbType.SelectedIndex = 0;
             }
+
+            Text = Strings.CreatePointObject;
+            lblId.Text = Strings.ID;
+            lblMapId.Text = Strings.MapID;
+            lblType.Text = Strings.Type;
+            lblX.Text = Strings.XPos;
+            lblY.Text = Strings.YPos;
+            btnCreate.Text = Strings.Create;
         }
 
         private void CreatePointObject_Load(object sender, EventArgs e)
@@ -51,7 +59,9 @@ namespace TricksterMap.Create
             return -1;
         }
 
+#pragma warning disable IDE1006 // Naming Styles
         private void btnCreate_Click(object sender, EventArgs e)
+#pragma warning restore IDE1006 // Naming Styles
         {
             var id = int.Parse(txtId.Text);
             var typeId = GetTypeIdFromName(cmbType.Text);
