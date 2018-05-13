@@ -16,13 +16,18 @@ namespace TricksterMap
         [STAThread]
         static void Main()
         {
-            //CultureInfo ci = new CultureInfo("zh");
-            //Thread.CurrentThread.CurrentUICulture = ci;
+            if (Environment.OSVersion.Version.Major <= 6)
+            {
+                SetProcessDPIAware();
+            }
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             new MDIParent().Show();
             Application.Run();
         }
+        
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern bool SetProcessDPIAware();
     }
 }
