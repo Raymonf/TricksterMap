@@ -242,10 +242,10 @@
     <comment>Y size, for the collision data legend</comment>
   </data>
   <data name="Create" xml:space="preserve">
-    <value>創建</value>
+    <value>新增</value>
   </data>
   <data name="CreatePointObject" xml:space="preserve">
-    <value>創建 Point Object</value>
+    <value>新增 Point Object</value>
   </data>
   <data name="Delete" xml:space="preserve">
     <value>刪除</value>

@@ -25,7 +25,7 @@ It uses Windows Forms. Feel free to yell at me for that.
 
 ## Screenshot(s)
 
-![Megalopolis Square/map_sq00.md3](/Screenshots/TricksterMap_2018-05-12_00-42-03.png?raw=true "Megalopolis Square/map_sq00.md3")
+![Megalopolis Square/map_sq00.md3](/Screenshots/TricksterMap_2018-05-13_02-19-06.png?raw=true "Megalopolis Square/map_sq00.md3")
 
 ## Credits
 
