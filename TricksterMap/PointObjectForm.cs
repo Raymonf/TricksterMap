@@ -64,5 +64,34 @@ namespace TricksterMap
                 pointList.SelectedItems[0].Remove();
             }
         }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (pointList.SelectedIndices.Count > 0)
+            {
+                var index = pointList.Items.IndexOf(pointList.SelectedItems[0]);
+
+                var point = Map.PointObjects[index];
+
+                Map.PointObjects.RemoveAt(index);
+                pointList.SelectedItems[0].Remove();
+
+                var createForm = new CreatePointObject()
+                {
+                    Map = Map,
+                    PointListForm = this,
+                    Text = "Edit Point Object"
+                };
+
+                createForm.btnCreate.Text = "Edit";
+                createForm.txtId.Text = point.Id.ToString();
+                createForm.txtMapId.Text = point.MapId.ToString();
+                createForm.txtX.Text = point.X.ToString();
+                createForm.txtY.Text = point.Y.ToString();
+                createForm.cmbType.SelectedIndex = createForm.cmbType.FindStringExact(point.GetTypeName());
+
+                createForm.ShowDialog();
+            }
+        }
     }
 }

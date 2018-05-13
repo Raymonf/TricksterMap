@@ -164,17 +164,16 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox cmbType;
         private System.Windows.Forms.Label lblType;
         private System.Windows.Forms.Label lblId;
-        private System.Windows.Forms.TextBox txtId;
-        private System.Windows.Forms.TextBox txtMapId;
         private System.Windows.Forms.Label lblMapId;
-        private System.Windows.Forms.TextBox txtX;
         private System.Windows.Forms.Label lblX;
-        private System.Windows.Forms.TextBox txtY;
         private System.Windows.Forms.Label lblY;
-        private System.Windows.Forms.Button btnCreate;
+        public System.Windows.Forms.ComboBox cmbType;
+        public System.Windows.Forms.TextBox txtId;
+        public System.Windows.Forms.TextBox txtMapId;
+        public System.Windows.Forms.TextBox txtX;
+        public System.Windows.Forms.TextBox txtY;
+        public System.Windows.Forms.Button btnCreate;
     }
 }

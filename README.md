@@ -11,11 +11,12 @@ It uses Windows Forms. Feel free to yell at me for that.
 * Point object details
 * Collision data view
 * Tile data view (currently somewhat broken)
+* Point object editor
 
 ## Planned Features:
 
-* Point object editor
 * Full map view
+* Range object viewer/editor
 * Collision data editor
 
 ## Screenshot(s)
