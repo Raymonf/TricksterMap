@@ -89,7 +89,7 @@ namespace TricksterMap
         }
 
 #pragma warning disable IDE1006 // Naming Styles
-        private void pointList_DoubleClick(object sender, EventArgs e)
+        private void rangeList_DoubleClick(object sender, EventArgs e)
 #pragma warning restore IDE1006 // Naming Styles
         {
             EditSelectedItem();

@@ -79,7 +79,7 @@
             this.pointList.TabIndex = 3;
             this.pointList.UseCompatibleStateImageBehavior = false;
             this.pointList.View = System.Windows.Forms.View.Details;
-            this.pointList.DoubleClick += new System.EventHandler(this.pointList_DoubleClick);
+            this.pointList.DoubleClick += new System.EventHandler(this.rangeList_DoubleClick);
             // 
             // idHeader
             // 
