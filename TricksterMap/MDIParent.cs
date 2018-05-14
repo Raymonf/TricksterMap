@@ -68,6 +68,17 @@ namespace TricksterMap
 
                     pointForm.Show();
 
+                    var rangeForm = new RangeObjectForm
+                    {
+                        Text = String.Format(Strings.RangeObjectView, fileName),
+                        MdiParent = this,
+                        Map = mapInfo
+                    };
+
+                    rangeForm.RepopulateData();
+
+                    rangeForm.Show();
+
                     // At this point, we need to grab the tile data
                     var tileData = TileReader.Read(mapInfo, File.Open(fileName.Replace(".md3", ".til"), FileMode.Open));
                     var tiles = new List<Bitmap>();

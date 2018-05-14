@@ -278,4 +278,25 @@
   <data name="Language" xml:space="preserve">
     <value>Language</value>
   </data>
+  <data name="RangeObjectView" xml:space="preserve">
+    <value>Range Object View</value>
+  </data>
+  <data name="CreateRangeObject" xml:space="preserve">
+    <value>Create Range Object</value>
+  </data>
+  <data name="EditRangeObject" xml:space="preserve">
+    <value>Edit Range Object</value>
+  </data>
+  <data name="X1Pos" xml:space="preserve">
+    <value>X1</value>
+  </data>
+  <data name="X2Pos" xml:space="preserve">
+    <value>X2</value>
+  </data>
+  <data name="Y1Pos" xml:space="preserve">
+    <value>Y1</value>
+  </data>
+  <data name="Y2Pos" xml:space="preserve">
+    <value>Y2</value>
+  </data>
 </root>

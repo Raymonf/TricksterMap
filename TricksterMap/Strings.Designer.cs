@@ -97,6 +97,15 @@ namespace TricksterMap {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Create Range Object.
+        /// </summary>
+        internal static string CreateRangeObject {
+            get {
+                return ResourceManager.GetString("CreateRangeObject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Delete.
         /// </summary>
         internal static string Delete {
@@ -120,6 +129,15 @@ namespace TricksterMap {
         internal static string EditPointObject {
             get {
                 return ResourceManager.GetString("EditPointObject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Range Object.
+        /// </summary>
+        internal static string EditRangeObject {
+            get {
+                return ResourceManager.GetString("EditRangeObject", resourceCulture);
             }
         }
         
@@ -358,6 +376,15 @@ namespace TricksterMap {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Range Object View.
+        /// </summary>
+        internal static string RangeObjectView {
+            get {
+                return ResourceManager.GetString("RangeObjectView", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Respawn Location.
         /// </summary>
         internal static string RespawnLocation {
@@ -466,6 +493,24 @@ namespace TricksterMap {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to X1.
+        /// </summary>
+        internal static string X1Pos {
+            get {
+                return ResourceManager.GetString("X1Pos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to X2.
+        /// </summary>
+        internal static string X2Pos {
+            get {
+                return ResourceManager.GetString("X2Pos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to X.
         /// </summary>
         internal static string XPos {
@@ -480,6 +525,24 @@ namespace TricksterMap {
         internal static string XSize {
             get {
                 return ResourceManager.GetString("XSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Y1.
+        /// </summary>
+        internal static string Y1Pos {
+            get {
+                return ResourceManager.GetString("Y1Pos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Y2.
+        /// </summary>
+        internal static string Y2Pos {
+            get {
+                return ResourceManager.GetString("Y2Pos", resourceCulture);
             }
         }
         

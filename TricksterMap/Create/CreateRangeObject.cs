@@ -11,43 +11,45 @@ using TricksterMap.Data;
 
 namespace TricksterMap.Create
 {
-    public partial class CreatePointObject : Form
+    public partial class CreateRangeObject : Form
     {
         public MapDataInfo Map = null;
-        public PointObjectForm PointListForm = null;
+        public RangeObjectForm RangeListForm = null;
         public Dictionary<string, int> types = new Dictionary<string, int>();
         public bool isEditing = false;
 
-        public CreatePointObject()
+        public CreateRangeObject()
         {
             InitializeComponent();
 
-            foreach (var type in PointObject.ValidTypes)
+            foreach (var type in RangeObject.ValidTypes)
             {
-                var typeName = PointObject.GetTypeNameFromId(type);
+                var typeName = RangeObject.GetTypeNameFromId(type);
 
                 types.Add(typeName, type);
 
                 cmbType.Items.Add(typeName);
             }
 
-            if (PointObject.ValidTypes.Length > 0)
+            if (RangeObject.ValidTypes.Length > 0)
             {
                 cmbType.SelectedIndex = 0;
             }
 
-            Text = Strings.CreatePointObject;
+            Text = Strings.CreateRangeObject;
             lblId.Text = Strings.ID;
             lblMapId.Text = Strings.MapID;
             lblType.Text = Strings.Type;
-            lblX.Text = Strings.XPos;
-            lblY.Text = Strings.YPos;
+            lblX1.Text = Strings.X1Pos;
+            lblY1.Text = Strings.Y1Pos;
+            lblX2.Text = Strings.X2Pos;
+            lblY2.Text = Strings.Y2Pos;
             btnCreate.Text = Strings.Create;
-            
+
             this.SetFonts();
         }
 
-        private void CreatePointObject_Load(object sender, EventArgs e)
+        private void CreateRangeObject_Load(object sender, EventArgs e)
         {
 
         }
@@ -61,40 +63,27 @@ namespace TricksterMap.Create
 
             return -1;
         }
-        
+
         private void AddObject()
         {
             var id = int.Parse(txtId.Text);
             var typeId = GetTypeIdFromName(cmbType.Text);
 
-            // Portals, respawns, and none should have ID 0
-            if (typeId == 0x01 || typeId == 0x02)
-            {
-                id = 0;
-            }
-            else
-            {
-                // Check for a duplicate ID
-                if (Map.PointObjects.Exists(p => p.Type == typeId && p.Id == id))
-                {
-                    MessageBox.Show("Duplicate ID found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-            }
-
-            var point = new PointObject()
+            var point = new RangeObject()
             {
                 Id = id,
                 Type = typeId,
-                MapId = int.Parse(txtMapId.Text),
-                X = int.Parse(txtX.Text),
-                Y = int.Parse(txtY.Text)
+                Destination = int.Parse(txtMapId.Text),
+                X1 = int.Parse(txtX1.Text),
+                Y1 = int.Parse(txtY1.Text),
+                X2 = int.Parse(txtX2.Text),
+                Y2 = int.Parse(txtY2.Text)
             };
 
-            Map.PointObjects.Add(point);
-            PointListForm.RepopulateData();
+            Map.RangeObjects.Add(point);
+            RangeListForm.RepopulateData();
         }
-
+        
         private void CreateAndExit(object sender, EventArgs e)
         {
             isEditing = false;
@@ -102,7 +91,7 @@ namespace TricksterMap.Create
             Close();
         }
 
-        private void CreatePointObject_FormClosing(object sender, FormClosingEventArgs e)
+        private void CreateRangeObject_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (isEditing)
             {

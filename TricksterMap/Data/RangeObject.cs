@@ -8,6 +8,11 @@ namespace TricksterMap.Data
 {
     public class RangeObject
     {
+        public static int[] ValidTypes =
+        {
+            0x00, 0x01, 0x02, 0x05, 0x06, 0x09, 0x0A
+        };
+
         /// <summary>
         /// Range object type
         /// </summary>
@@ -40,13 +45,22 @@ namespace TricksterMap.Data
         /// <returns>Name of the object's type</returns>
         public string GetTypeName()
         {
+            return GetTypeNameFromId(Type);
+        }
+
+        /// <summary>
+        /// Gets the name of a range object's type
+        /// </summary>
+        /// <returns>Name of the object's type</returns>
+        public static string GetTypeNameFromId(int Type)
+        {
             switch (Type)
             {
                 case 0x00:
-                    return Strings.SetDebris;
-                case 0x01:
-                    // The range in which a user can enter a portal from
+                    // The range in which a user can enter a portal from, maybe?
                     return Strings.PortalEntranceRange;
+                case 0x01:
+                    return Strings.SetDebris;
                 case 0x02:
                     return Strings.MonsterMovementRange;
                 case 0x05:

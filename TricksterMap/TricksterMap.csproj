@@ -64,6 +64,12 @@
     <Compile Include="Create\CreatePointObject.Designer.cs">
       <DependentUpon>CreatePointObject.cs</DependentUpon>
     </Compile>
+    <Compile Include="Create\CreateRangeObject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Create\CreateRangeObject.Designer.cs">
+      <DependentUpon>CreateRangeObject.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data\ConfigLayer.cs" />
     <Compile Include="Data\MapDataInfo.cs" />
     <Compile Include="Data\PointObject.cs" />
@@ -78,6 +84,12 @@
       <DependentUpon>MapControlForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MapDataLoader.cs" />
+    <Compile Include="RangeObjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RangeObjectForm.Designer.cs">
+      <DependentUpon>RangeObjectForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TileViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,8 +122,14 @@
     <EmbeddedResource Include="Create\CreatePointObject.resx">
       <DependentUpon>CreatePointObject.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Create\CreateRangeObject.resx">
+      <DependentUpon>CreateRangeObject.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MapControlForm.resx">
       <DependentUpon>MapControlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RangeObjectForm.resx">
+      <DependentUpon>RangeObjectForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TileViewForm.resx">
       <DependentUpon>TileViewForm.cs</DependentUpon>

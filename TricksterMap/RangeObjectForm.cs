@@ -12,12 +12,12 @@ using TricksterMap.Data;
 
 namespace TricksterMap
 {
-    public partial class PointObjectForm : Form
+    public partial class RangeObjectForm : Form
     {
         public MapDataInfo Map = null;
         public Dictionary<string, int> types = new Dictionary<string, int>();
 
-        public PointObjectForm()
+        public RangeObjectForm()
         {
             InitializeComponent();
 
@@ -25,16 +25,18 @@ namespace TricksterMap
             idHeader.Text = Strings.ID;
             typeHeader.Text = Strings.Type;
             mapIdHeader.Text = Strings.MapID;
-            xPosHeader.Text = Strings.XPos;
-            yPosHeader.Text = Strings.YPos;
+            x1PosHeader.Text = Strings.X1Pos;
+            y1PosHeader.Text = Strings.Y1Pos;
+            x2PosHeader.Text = Strings.X2Pos;
+            y2PosHeader.Text = Strings.Y2Pos;
 
             btnCreate.Text = Strings.Create;
             btnDelete.Text = Strings.Delete;
             btnEdit.Text = Strings.Edit;
 
-            foreach (var type in PointObject.ValidTypes)
+            foreach (var type in RangeObject.ValidTypes)
             {
-                var typeName = PointObject.GetTypeNameFromId(type);
+                var typeName = RangeObject.GetTypeNameFromId(type);
 
                 types.Add(typeName, type);
             }
@@ -44,9 +46,9 @@ namespace TricksterMap
         {
             pointList.Items.Clear();
 
-            foreach (var point in Map.PointObjects)
+            foreach (var point in Map.RangeObjects)
             {
-                pointList.Items.Add(new ListViewItem(new string[] { point.Id.ToString(), point.GetTypeName(), point.MapId.ToString(), point.X.ToString(), point.Y.ToString() }));
+                pointList.Items.Add(new ListViewItem(new string[] { point.Id.ToString(), point.GetTypeName(), point.Destination.ToString(), point.X1.ToString(), point.Y1.ToString(), point.X2.ToString(), point.Y2.ToString() }));
             }
         }
 
@@ -54,10 +56,10 @@ namespace TricksterMap
         private void btnCreate_Click(object sender, EventArgs e)
 #pragma warning restore IDE1006 // Naming Styles
         {
-            var createForm = new CreatePointObject()
+            var createForm = new CreateRangeObject()
             {
                 Map = Map,
-                PointListForm = this
+                RangeListForm = this
             };
 
             createForm.ShowDialog();
@@ -69,7 +71,7 @@ namespace TricksterMap
         {
             if (pointList.SelectedIndices.Count > 0)
             {
-                Map.PointObjects.RemoveAt(pointList.Items.IndexOf(pointList.SelectedItems[0]));
+                Map.RangeObjects.RemoveAt(pointList.Items.IndexOf(pointList.SelectedItems[0]));
                 pointList.SelectedItems[0].Remove();
             }
         }
@@ -81,7 +83,7 @@ namespace TricksterMap
             EditSelectedItem();
         }
 
-        private void PointObjectForm_Load(object sender, EventArgs e)
+        private void RangeObjectForm_Load(object sender, EventArgs e)
         {
             this.SetFonts();
         }
@@ -99,25 +101,27 @@ namespace TricksterMap
             {
                 var index = pointList.Items.IndexOf(pointList.SelectedItems[0]);
 
-                var point = Map.PointObjects[index];
+                var range = Map.RangeObjects[index];
 
-                Map.PointObjects.RemoveAt(index);
+                Map.RangeObjects.RemoveAt(index);
                 pointList.SelectedItems[0].Remove();
 
-                var createForm = new CreatePointObject()
+                var createForm = new CreateRangeObject()
                 {
                     Map = Map,
-                    PointListForm = this,
+                    RangeListForm = this,
                     isEditing = true
                 };
 
-                createForm.Text = Strings.EditPointObject;
+                createForm.Text = Strings.EditRangeObject;
                 createForm.btnCreate.Text = Strings.Edit;
-                createForm.txtId.Text = point.Id.ToString();
-                createForm.txtMapId.Text = point.MapId.ToString();
-                createForm.txtX.Text = point.X.ToString();
-                createForm.txtY.Text = point.Y.ToString();
-                createForm.cmbType.SelectedIndex = createForm.cmbType.FindStringExact(point.GetTypeName());
+                createForm.txtId.Text = range.Id.ToString();
+                createForm.txtMapId.Text = range.Destination.ToString();
+                createForm.txtX1.Text = range.X1.ToString();
+                createForm.txtY1.Text = range.Y1.ToString();
+                createForm.txtX2.Text = range.X2.ToString();
+                createForm.txtY2.Text = range.Y2.ToString();
+                createForm.cmbType.SelectedIndex = createForm.cmbType.FindStringExact(range.GetTypeName());
 
                 createForm.ShowDialog();
             }

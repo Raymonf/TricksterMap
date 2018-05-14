@@ -131,7 +131,7 @@
             this.btnCreate.TabIndex = 12;
             this.btnCreate.Text = "Create";
             this.btnCreate.UseVisualStyleBackColor = true;
-            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            this.btnCreate.Click += new System.EventHandler(this.CreateAndExit);
             // 
             // CreatePointObject
             // 
@@ -157,6 +157,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create Point Object";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CreatePointObject_FormClosing);
             this.Load += new System.EventHandler(this.CreatePointObject_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
