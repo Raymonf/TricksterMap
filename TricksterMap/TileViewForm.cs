@@ -26,6 +26,11 @@ namespace TricksterMap
 
         private void MapViewForm_Load(object sender, EventArgs e)
         {
+            
+        }
+
+        public void Populate()
+        {
             if (tiles.Count > 0)
             {
                 i = 0;
