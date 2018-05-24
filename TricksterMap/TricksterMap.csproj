@@ -71,24 +71,25 @@
       <DependentUpon>CreateRangeObject.cs</DependentUpon>
     </Compile>
     <Compile Include="Data\ConfigLayer.cs" />
+    <Compile Include="Data\EffectObject.cs" />
     <Compile Include="Data\MapDataInfo.cs" />
     <Compile Include="Data\PointObject.cs" />
     <Compile Include="Data\RangeObject.cs" />
     <Compile Include="Data\TileData.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="LvCtl.cs" />
-    <Compile Include="MapControlForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MapControlForm.Designer.cs">
-      <DependentUpon>MapControlForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="MapDataLoader.cs" />
+    <Compile Include="MapSaveHelper.cs" />
     <Compile Include="RangeObjectForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RangeObjectForm.Designer.cs">
       <DependentUpon>RangeObjectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Strings.zh.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.zh.resx</DependentUpon>
     </Compile>
     <Compile Include="TileViewForm.cs">
       <SubType>Form</SubType>
@@ -125,9 +126,6 @@
     <EmbeddedResource Include="Create\CreateRangeObject.resx">
       <DependentUpon>CreateRangeObject.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MapControlForm.resx">
-      <DependentUpon>MapControlForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="RangeObjectForm.resx">
       <DependentUpon>RangeObjectForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,7 +152,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Strings.zh.resx" />
+    <EmbeddedResource Include="Strings.zh.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.zh.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

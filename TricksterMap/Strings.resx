@@ -118,8 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CollisionFormTitle" xml:space="preserve">
-    <value>Config Layer - Collision Data ({0})</value>
-    <comment>{0} is the map filename</comment>
+    <value>Config Layers</value>
   </data>
   <data name="File" xml:space="preserve">
     <value>File</value>
@@ -266,14 +265,14 @@
     <value>{0} of {1}</value>
   </data>
   <data name="PointObjectView" xml:space="preserve">
-    <value>Point Object Data ({0})</value>
+    <value>Point Object Data</value>
   </data>
   <data name="SaveAs" xml:space="preserve">
     <value>Save As...</value>
     <comment>Map control form button</comment>
   </data>
   <data name="TileView" xml:space="preserve">
-    <value>Tile View ({0})</value>
+    <value>Tile View</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Language</value>

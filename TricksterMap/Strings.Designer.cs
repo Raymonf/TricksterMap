@@ -70,7 +70,7 @@ namespace TricksterMap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Config Layer - Collision Data ({0}).
+        ///   Looks up a localized string similar to Config Layers.
         /// </summary>
         internal static string CollisionFormTitle {
             get {
@@ -340,7 +340,7 @@ namespace TricksterMap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Point Object Data ({0}).
+        ///   Looks up a localized string similar to Point Object Data.
         /// </summary>
         internal static string PointObjectView {
             get {
@@ -457,7 +457,7 @@ namespace TricksterMap {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tile View ({0}).
+        ///   Looks up a localized string similar to Tile View.
         /// </summary>
         internal static string TileView {
             get {

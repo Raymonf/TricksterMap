@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CollisionFormTitle" xml:space="preserve">
-    <value>Config Layer - 碰撞數據 （{0}）</value>
+    <value>Config Layer</value>
     <comment>{0} is the map filename</comment>
   </data>
   <data name="File" xml:space="preserve">
@@ -267,20 +267,20 @@
     <value>{1} 之 {0}</value>
   </data>
   <data name="PointObjectView" xml:space="preserve">
-    <value>Point Object 數據（{0}）</value>
+    <value>Point Object 數據</value>
   </data>
   <data name="SaveAs" xml:space="preserve">
     <value>另存為...</value>
     <comment>Map control form button</comment>
   </data>
   <data name="TileView" xml:space="preserve">
-    <value>平鋪顯示（{0}）</value>
+    <value>平鋪顯示</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>語言</value>
   </data>
   <data name="RangeObjectView" xml:space="preserve">
-    <value>Range Object 數據 （{0}）</value>
+    <value>Range Object 數據 </value>
   </data>
   <data name="CreateRangeObject" xml:space="preserve">
     <value>新增 Range Object</value>

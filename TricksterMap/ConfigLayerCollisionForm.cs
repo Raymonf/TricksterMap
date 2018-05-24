@@ -15,13 +15,13 @@ namespace TricksterMap
 {
     public partial class ConfigLayerCollisionForm : Form
     {
-        public Color WalkableColor = Color.Green;
-        public Color NotWalkableColor = Color.Black;
+        public Color WalkableColor = Color.FromArgb(128, 0, 200, 0);
+        public Color NotWalkableColor = Color.FromArgb(128, 0, 0, 0);
 
         string font = Strings.PreferredFont;
         Color textColor = Color.Black;
         Color backgroundColor = Color.FromArgb(160, 255, 255, 255);
-
+        
         public ConfigLayerCollisionForm()
         {
             InitializeComponent();
@@ -29,11 +29,48 @@ namespace TricksterMap
             this.SetFonts();
         }
 
-        public void LoadData(ConfigLayer layer)
+        public void LoadType3(ConfigLayer layer)
+        {
+            var iTotal = 0;
+
+            Bitmap pic = new Bitmap(layer.X, layer.Y);
+
+            for (int iY = 0; iY < layer.Y; iY++)
+            {
+                for (int iX = 0; iX < layer.X; iX++)
+                {
+                    pic.SetPixel(iX, iY, layer.Data[iTotal] == 0x0 ? Color.FromArgb(100, 0, 0, 200) : Color.FromArgb(0, 0, 0, 0));
+                    iTotal++;
+                }
+            }
+
+            type3Picture.BackgroundImage = pic;
+        }
+
+        public void LoadType2(ConfigLayer layer)
+        {
+            var iTotal = 0;
+            
+            Bitmap pic = new Bitmap(layer.X, layer.Y);
+
+            for (int iY = 0; iY < layer.Y; iY++)
+            {
+                for (int iX = 0; iX < layer.X; iX++)
+                {
+                    pic.SetPixel(iX, iY, layer.Data[iTotal] == 0x0 ? Color.FromArgb(100, 200, 0, 0) : Color.FromArgb(0, 0, 0, 0));
+                    iTotal++;
+                }
+            }
+
+            type2Picture.BackgroundImage = pic;
+        }
+
+        public void LoadCollisionData(ConfigLayer layer)
         {
             WriteLegend(layer);
 
             var iTotal = 0;
+
             Bitmap collision = new Bitmap(layer.X, layer.Y);
 
             for (int iY = 0; iY < layer.Y; iY++)
@@ -81,6 +118,14 @@ namespace TricksterMap
             g.Flush();
 
             collisionPicture.Image = bmp;
+        }
+
+        private void ConfigLayerCollisionForm_Load(object sender, EventArgs e)
+        {
+            type2Picture.Parent = collisionPicture;
+            type2Picture.BringToFront();
+            type3Picture.Parent = type2Picture;
+            type3Picture.BringToFront();
         }
     }
 }

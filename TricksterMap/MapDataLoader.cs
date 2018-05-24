@@ -10,6 +10,11 @@ namespace TricksterMap
 {
     public class MapDataLoader
     {
+        static string ByteArrayToString(byte[] ba)
+        {
+            return BitConverter.ToString(ba).Replace("-", " ").ToUpper();
+        }
+
         public static MapDataInfo Load(BinaryReader reader)
         {
             var mapData = new MapDataInfo();
@@ -67,6 +72,7 @@ namespace TricksterMap
                 layer.Data = reader.ReadBytes(layer.X * layer.Y);
                 
                 Console.WriteLine("X: {0} / Y: {1} / Total length: {2} ( {2:X} )", layer.X, layer.Y, layer.X * layer.Y);
+                Console.WriteLine("Type: {0}", layer.Type);
                 Console.WriteLine("Config layer {0} length: {1:X}", i + 1, layer.Data.Length);
                 
                 mapData.ConfigLayers.Add(layer);
@@ -127,6 +133,7 @@ namespace TricksterMap
             {
                 var effect = effectData.Skip(i * 52).Take(52).ToArray();
                 mapData.EffectObjects.Add(effect);
+                Console.WriteLine(ByteArrayToString(effect));
             }
 
             return mapData;
