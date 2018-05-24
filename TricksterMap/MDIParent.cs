@@ -26,6 +26,7 @@ namespace TricksterMap
 
             fileMenu.Text = Strings.File;
             openToolStripMenuItem.Text = Strings.FileOpen;
+            saveAsToolStripMenuItem.Text = Strings.SaveAs;
             exitToolStripMenuItem.Text = Strings.FileExit;
             languageToolStripMenuItem.Text = Strings.Language;
             
@@ -39,6 +40,8 @@ namespace TricksterMap
                 using (var reader = new BinaryReader(fileStream))
                 {
                     var mapInfo = MapDataLoader.Load(reader);
+
+                    tabControl1.TabPages.Clear();
 
                     var page = new TabPage()
                     {
@@ -143,24 +146,27 @@ namespace TricksterMap
                         tiles.Add(bmp);
                     }
 
-                    var tilePage = new TabPage()
+                    if (tiles.Count > 0)
                     {
-                        Text = String.Format(Strings.TileView, fileName.Replace(".md3", ".til"))
-                    };
+                        var tilePage = new TabPage()
+                        {
+                            Text = String.Format(Strings.TileView, fileName.Replace(".md3", ".til"))
+                        };
 
-                    var tileViewForm = new TileViewForm
-                    {
-                        TopLevel = false,
-                        FormBorderStyle = FormBorderStyle.None,
-                        Dock = DockStyle.Fill,
-                        Visible = true,
-                        Map = mapInfo,
-                        tiles = tiles
-                    };
+                        var tileViewForm = new TileViewForm
+                        {
+                            TopLevel = false,
+                            FormBorderStyle = FormBorderStyle.None,
+                            Dock = DockStyle.Fill,
+                            Visible = true,
+                            Map = mapInfo,
+                            tiles = tiles
+                        };
 
-                    tileViewForm.Populate();
-                    tilePage.Controls.Add(tileViewForm);
-                    tabControl1.TabPages.Add(tilePage);
+                        tileViewForm.Populate();
+                        tilePage.Controls.Add(tileViewForm);
+                        tabControl1.TabPages.Add(tilePage);
+                    }
 
                     // Get filesizes for temporary stuff
                     mapInfo.BacFileSize = (int)new FileInfo(fileName.Replace(".md3", ".bac")).Length;
