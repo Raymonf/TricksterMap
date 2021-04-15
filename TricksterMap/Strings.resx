@@ -222,8 +222,8 @@
     <comment>Used for rendering text</comment>
   </data>
   <data name="SetDebris" xml:space="preserve">
-    <value>Set Debris (?)</value>
-    <comment>No idea what this is tbh</comment>
+    <value>Check Level Requirement</value>
+    <comment>Erroneously named SetDebris; will check the PortalInfo table.</comment>
   </data>
   <data name="SkillNPC" xml:space="preserve">
     <value>Skill Shop NPC</value>

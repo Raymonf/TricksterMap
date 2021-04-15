@@ -122,7 +122,7 @@
     <comment>{0} is the map filename</comment>
   </data>
   <data name="File" xml:space="preserve">
-    <value>文件</value>
+    <value>檔案</value>
     <comment>Menu name</comment>
   </data>
   <data name="FileExit" xml:space="preserve">
@@ -224,8 +224,8 @@
     <comment>Used for rendering text</comment>
   </data>
   <data name="SetDebris" xml:space="preserve">
-    <value>設定殘骸 (?)</value>
-    <comment>No idea what this is tbh</comment>
+    <value>等級要求</value>
+    <comment>Erroneously named SetDebris; will check the PortalInfo table.</comment>
   </data>
   <data name="SkillNPC" xml:space="preserve">
     <value>NPC（技能商店）</value>
@@ -280,7 +280,7 @@
     <value>語言</value>
   </data>
   <data name="RangeObjectView" xml:space="preserve">
-    <value>Range Object 數據 </value>
+    <value>Range Object 數據</value>
   </data>
   <data name="CreateRangeObject" xml:space="preserve">
     <value>新增 Range Object</value>
