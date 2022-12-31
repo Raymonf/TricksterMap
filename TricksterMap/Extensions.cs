@@ -14,36 +14,21 @@ namespace TricksterMap
         {
             foreach (var control in controls)
             {
-                if (control is Control.ControlCollection)
+                if (control is Control.ControlCollection collection)
                 {
-                    SetFont((Control.ControlCollection)control);
+                    SetFont(collection);
                 }
-                else if (control is TableLayoutPanel)
+                else if (control is TableLayoutPanel panel)
                 {
-                    SetFont(((TableLayoutPanel)control).Controls);
+                    SetFont(panel.Controls);
                 }
-                else if (control is Label)
+                else if (control is Control c)
                 {
-                    ((Label)control).Font = new Font(Strings.PreferredFont, ((Label)control).Font.Size);
-                }
-                else if (control is TextBox)
-                {
-                    ((TextBox)control).Font = new Font(Strings.PreferredFont, ((TextBox)control).Font.Size);
-                }
-                else if (control is ComboBox)
-                {
-                    ((ComboBox)control).Font = new Font(Strings.PreferredFont, ((ComboBox)control).Font.Size);
-                }
-                else if (control is Button)
-                {
-                    ((Button)control).Font = new Font(Strings.PreferredFont, ((Button)control).Font.Size);
-                }
-                else if (control is ListView)
-                {
-                    ((ListView)control).Font = new Font(Strings.PreferredFont, ((ListView)control).Font.Size);
+                    c.Font = new Font(Strings.PreferredFont, c.Font.Size);
                 }
             }
         }
+
         public static void SetFonts(this Form form)
         {
             SetFont(form.Controls);
