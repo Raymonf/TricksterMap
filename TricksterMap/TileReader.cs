@@ -70,14 +70,6 @@ namespace TricksterMap
                         var xSize = reader.ReadInt32();
                         var ySize = reader.ReadInt32();
 
-                        /*
-                        Console.WriteLine("groupSize = {0}", groupSize);
-                        Console.WriteLine("tileSizeX = {0}", tileSizeX);
-                        Console.WriteLine("tileSizeY = {0}", tileSizeY);
-                        Console.WriteLine("xSize = {0}", xSize);
-                        Console.WriteLine("ySize = {0}", ySize);
-                        */
-
                         var bmps = new List<Bitmap>();
 
                         var sizePerTile = (tileSizeX * tileSizeY * (map.TileBpp / 8));

@@ -79,7 +79,7 @@
             this.pointList.TabIndex = 3;
             this.pointList.UseCompatibleStateImageBehavior = false;
             this.pointList.View = System.Windows.Forms.View.Details;
-            this.pointList.DoubleClick += new System.EventHandler(this.rangeList_DoubleClick);
+            this.pointList.DoubleClick += new System.EventHandler(this.RangeList_DoubleClick);
             // 
             // idHeader
             // 
@@ -132,7 +132,7 @@
             this.btnCreate.TabIndex = 0;
             this.btnCreate.Text = "Create";
             this.btnCreate.UseVisualStyleBackColor = true;
-            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            this.btnCreate.Click += new System.EventHandler(this.BtnCreate_Click);
             // 
             // btnDelete
             // 
@@ -143,7 +143,7 @@
             this.btnDelete.TabIndex = 1;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // btnEdit
             // 
@@ -154,7 +154,7 @@
             this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
             // x2PosHeader
             // 

@@ -52,9 +52,7 @@ namespace TricksterMap
             }
         }
 
-#pragma warning disable IDE1006 // Naming Styles
-        private void btnCreate_Click(object sender, EventArgs e)
-#pragma warning restore IDE1006 // Naming Styles
+        private void BtnCreate_Click(object sender, EventArgs e)
         {
             var createForm = new CreateRangeObject()
             {
@@ -65,9 +63,7 @@ namespace TricksterMap
             createForm.ShowDialog();
         }
 
-#pragma warning disable IDE1006 // Naming Styles
-        private void btnDelete_Click(object sender, EventArgs e)
-#pragma warning restore IDE1006 // Naming Styles
+        private void BtnDelete_Click(object sender, EventArgs e)
         {
             if (pointList.SelectedIndices.Count > 0)
             {
@@ -76,9 +72,7 @@ namespace TricksterMap
             }
         }
 
-#pragma warning disable IDE1006 // Naming Styles
-        private void btnEdit_Click(object sender, EventArgs e)
-#pragma warning restore IDE1006 // Naming Styles
+        private void BtnEdit_Click(object sender, EventArgs e)
         {
             EditSelectedItem();
         }
@@ -88,9 +82,7 @@ namespace TricksterMap
             this.SetFonts();
         }
 
-#pragma warning disable IDE1006 // Naming Styles
-        private void rangeList_DoubleClick(object sender, EventArgs e)
-#pragma warning restore IDE1006 // Naming Styles
+        private void RangeList_DoubleClick(object sender, EventArgs e)
         {
             EditSelectedItem();
         }

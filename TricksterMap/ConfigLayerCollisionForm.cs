@@ -44,7 +44,7 @@ namespace TricksterMap
                 }
             }
 
-            type3Picture.BackgroundImage = pic;
+            type3Picture.Image = pic;
         }
 
         public void LoadType2(ConfigLayer layer)
@@ -62,12 +62,12 @@ namespace TricksterMap
                 }
             }
 
-            type2Picture.BackgroundImage = pic;
+            type2Picture.Image = pic;
         }
 
         public void LoadCollisionData(ConfigLayer layer)
         {
-            WriteLegend(layer);
+            CreateLegend(layer);
 
             var iTotal = 0;
 
@@ -82,12 +82,12 @@ namespace TricksterMap
                 }
             }
 
-            collisionPicture.BackgroundImage = collision;
+            collisionPicture.Image = collision;
         }
 
-        public void WriteLegend(ConfigLayer layer)
+        public void CreateLegend(ConfigLayer layer)
         {
-            Bitmap bmp = new Bitmap(512, 90);
+            Bitmap bmp = new Bitmap(512, 96);
             Graphics g = Graphics.FromImage(bmp);
 
             g.SmoothingMode = SmoothingMode.AntiAlias;
@@ -103,7 +103,7 @@ namespace TricksterMap
                 var notWalkSize = g.MeasureString(Strings.NotWalkable, fontObject);
                 var boxWidth = Math.Max(walkSize.Width, notWalkSize.Width); // get larger
 
-                g.FillRectangle(brush, 0, 0, boxWidth + 32, 90);
+                g.FillRectangle(brush, 0, 0, boxWidth + 32, bmp.Height);
             }
 
             g.DrawRectangle(new Pen(WalkableColor, 10), 10, 10, 10, 10);
@@ -117,7 +117,8 @@ namespace TricksterMap
 
             g.Flush();
 
-            collisionPicture.Image = bmp;
+            LegendPictureBox.Size = bmp.Size;
+            LegendPictureBox.Image = bmp;
         }
 
         private void ConfigLayerCollisionForm_Load(object sender, EventArgs e)
@@ -126,6 +127,8 @@ namespace TricksterMap
             type2Picture.BringToFront();
             type3Picture.Parent = type2Picture;
             type3Picture.BringToFront();
+            LegendPictureBox.Parent = type3Picture;
+            LegendPictureBox.BringToFront();
         }
     }
 }
