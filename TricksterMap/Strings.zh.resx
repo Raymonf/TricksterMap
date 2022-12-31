@@ -130,7 +130,7 @@
     <comment>Menu item (File &gt; Exit)</comment>
   </data>
   <data name="FileOpen" xml:space="preserve">
-    <value>開啟文件</value>
+    <value>開啟檔案</value>
     <comment>Menu item (File &gt; Open)</comment>
   </data>
   <data name="GeneralNPC" xml:space="preserve">
@@ -152,7 +152,6 @@
   </data>
   <data name="NORIEntity" xml:space="preserve">
     <value>NORI 實體</value>
-    <comment>Unconfirmed</comment>
   </data>
   <data name="NotWalkable" xml:space="preserve">
     <value>不能通過的部分</value>
